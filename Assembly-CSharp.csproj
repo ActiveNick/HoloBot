@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{341C2442-0E2E-3C4B-9244-A77A5897AD72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_0;UNITY_5_4;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;ENABLE_HOLOLENS_MODULE_API;UNITY_METRO;UNITY_METRO_API;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_TEXTUREID_MAP;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_EVENT_QUEUE;ENABLE_NETWORK;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;CURL_STATICLIB;UNITY_WSA;ENABLE_DOTNET;ENABLE_PROFILER;UNITY_WSA_10_0;UNITY_WINRT_10_0;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\UnityHolographic\UnityNative_5.4.0b24-HTP\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/UnityHolographic/UnityNative_5.4.0b24-HTP/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\CWGestureManager.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\DeleteLine.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\IClosable.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\IGeometry.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\IPloygonClosable.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\LineManager.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\MeasureManager.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\ModeTip.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\PloygonManager.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\GazeRuler\Scripts\Test\LineTest.cs" />
+     <Compile Include="Assets\HoloToolkit-Examples\SpatialMappingComponent\DropCube.cs" />
+     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\MetroHandleRef.cs" />
+     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\Reflection\ReflectionExtensions.cs" />
+     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\Reflection\TypeUtils.cs" />
+     <Compile Include="Assets\HoloToolkit\CrossPlatform\Scripts\SystemException.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\BasicCursor.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\CursorFeedback.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\CursorManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\FocusedObjectMessageSender.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\GazeManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\GazeStabilizer.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\GestureManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\HandGuidance.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\HandsManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\KeywordManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\OnGazeEnterEvent.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\OnGazeLeaveEvent.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\OnSelectEvent.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Scripts\SelectedObjectMessageSender.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Tests\Scripts\FocusedObjectMessageReceiver.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Tests\Scripts\ScaleObjectMessageReceiver.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Tests\Scripts\SelectedObjectMessageReceiver.cs" />
+     <Compile Include="Assets\HoloToolkit\Input\Tests\Scripts\SimpleGridGenerator.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\AnchorDownloadRequest.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\AudioManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\BoolElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ClientConfig.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ClientRole.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\DirectPairConnector.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\DirectPairReceiver.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\DoubleElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Element.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ElementType.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\FloatElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ImageTagLocation.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ImageTagLocationListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ImageTagLocationType.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ImageTagManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\IntArrayElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\IntArrayListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\IntElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Listener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Log.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\LogManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\LogSeverity.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\LogWriter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\LongElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\MachineSessionState.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\MessageChannel.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\MessageID.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\MessagePriority.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\MessageReliability.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\NetworkConnection.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\NetworkConnectionAdapter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\NetworkConnectionListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\NetworkInMessage.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\NetworkOutMessage.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ObjectElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ObjectElementAdapter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ObjectElementListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\PairMaker.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\PairingAdapter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\PairingListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\PairingManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\PairingResult.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Profile.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\ProfileManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Receipt.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Room.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\RoomManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\RoomManagerAdapter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\RoomManagerListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Session.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SessionListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SessionManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SessionManagerAdapter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SessionManagerListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SessionType.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\Settings.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SharingClient.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SharingClientPINVOKE.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SharingManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\StringElement.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\SyncListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\TagImage.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\User.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\UserPresenceManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\UserPresenceManagerAdapter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\UserPresenceManagerListener.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\VisualPairConnector.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\VisualPairReceiver.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\XString.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SharingSessionTracker.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SharingStage.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\AutoJoinSession.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\ConsoleLogWriter.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\DirectPairing.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\ExternalProcess.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\MathUtils.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\Utils.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Tests\CustomMessages.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Tests\ImportExportAnchorManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Sharing\Tests\RemoteHeadManager.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\ObjectSurfaceObserver.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\FileSurfaceObserver.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\MeshSaver.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\RemoteMappingManager.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\RemoteMeshSource.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\RemoteMeshTarget.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\SimpleMeshSerializer.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialMappingManager.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialMappingObserver.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialMappingSource.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\PlaneFinding.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\RemoveSurfaceVertices.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\SurfaceMeshesToPlanes.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\SurfacePlane.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\TapToPlace.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Tests\Support\PlaneFindingTest.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialMapping\Tests\Support\SpatialProcessingTest.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\ActiveEvent.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\AudioClip.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\AudioContainer.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\AudioEvent.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\AudioSourcePlayClipExtension.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\AudioSourcesReference.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\MiniAudioEvent.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\SpatialSoundSettings.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\UAudioManager.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\UAudioManagerBase.cs" />
+     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\UAudioMiniManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Billboard.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DirectionIndicator.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FixedAngularSize.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FpsDisplay.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Interpolator.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\ManualCameraControl.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\NearPlaneFade.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SimpleTagalong.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Singleton.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\StabilizationPlaneModifier.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Tagalong.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\TextToSpeechManager.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorExtensions.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\GestureResponder.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\PlaneTargetGroup.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\PlaneTargetGroupPicker.cs" />
+     <Compile Include="Assets\HoloToolkit\Utilities\Tests\TextToSpeechManagerTest.cs" />
+     <Compile Include="Assets\Scripts\BotService.cs" />
+     <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
+     <Compile Include="Assets\Scripts\SpeechManager.cs" />
+     <Compile Include="Assets\Scripts\TaptoPlace.cs" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\UnlitConfigurable.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\VertexLitConfigurable.cginc" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\UnlitConfigurableTransparent.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\LambertianConfigurable.cginc" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\VertexLitConfigurable.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\StandardFast.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\LambertianConfigurable.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\BlinnPhongConfigurableTransparent.shader" />
+     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Wireframe.shader" />
+     <None Include="Assets\HoloToolkit\Input\Shaders\CursorShader.shader" />
+     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Occlusion.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\LambertianConfigurableTransparent.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\HoloToolkitCommon.cginc" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\VertexLitConfigurableTransparent.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\BlinnPhongConfigurable.cginc" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\BlinnPhongConfigurable.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\WindowOcclusion.shader" />
+     <None Include="Assets\HoloToolkit\Utilities\Shaders\UnlitConfigurable.cginc" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/UnityHolographic/UnityNative_5.4.0b24-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/UnityHolographic/UnityNative_5.4.0b24-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/UnityHolographic/UnityNative_5.4.0b24-HTP/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Runtime/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>C:/Program Files/UnityHolographic/UnityNative_5.4.0b24-HTP/Editor/Data/UnityExtensions/Unity/UnityVR/Runtime/UnityEngine.VR.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
