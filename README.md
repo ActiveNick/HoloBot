@@ -12,7 +12,8 @@ To get started with HoloLens, visit the [Windows Holographic Dev Center](https:/
 - All sounds and speech use spatial audio that originate from the HoloBot
 - The "brain" of the HoloBot can be any public bot built with the [Microsoft Bot Framework](https://dev.botframework.com/)
 
-![All](Screenshots/PolyBotScene.PNG)
+## Video Demonstration
+[![ScreenShot](Screenshots/HoloBotVideo.PNG)](https://youtu.be/8ozfw2LO6No)
 
 ## Instructions / Notes
 - The HoloBot model and sounds come from the [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) tutorial: [Holograms 240: Sharing Holograms](https://developer.microsoft.com/en-us/windows/holographic/holograms_240)
@@ -28,6 +29,8 @@ To get started with HoloLens, visit the [Windows Holographic Dev Center](https:/
 - Enable the Direct Line channel on your bot
 - Generate and copy your Direct Line secret (aka API key)
 - Open **BotService.cs** in the **/Scripts** folder of the HoloBot Unity project and paste your Direct Line secret in the **_APIKEY** private string
+
+![All](Screenshots/PolyBotScene.PNG)
 
 ## Acknowledgments
 I want to offer special thanks to the following people who have helped me in building this sample app:
