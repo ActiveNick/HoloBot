@@ -3,7 +3,7 @@ A sample Unity project for [Microsoft HoloLens](http://hololens.com) that lets y
 
 To get started with HoloLens, visit the [Windows Holographic Dev Center](https://developer.microsoft.com/windows/holographic).
 
-## Feature
+## Features
 - Hovering bot head (aka HoloBot) with looping sound
 - Tap the HoloBot to move it to a different location, tap again to place
 - Gaze at the HoloBot to trigger the speech recognizer, you will hear a "Ping" sound
