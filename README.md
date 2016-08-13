@@ -15,6 +15,8 @@ To get started with HoloLens, visit the [Windows Holographic Dev Center](https:/
 ## Video Demonstration
 [![ScreenShot](Screenshots/HoloBotVideo.PNG)](https://youtu.be/8ozfw2LO6No)
 
+The bot demonstrated in this video is [The Maker Show Bot, also found here on GitHub](https://github.com/ActiveNick/TheMakerShowBot).
+
 ## Instructions / Notes
 - The HoloBot model and sounds come from the [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) tutorial: [Holograms 240: Sharing Holograms](https://developer.microsoft.com/en-us/windows/holographic/holograms_240)
 - Uses Gaze Manager & Gesture Manager from [HoloLens Unity Toolkit](https://github.com/microsoft/HoloToolkit-Unity) (Input scripts)
@@ -36,8 +38,10 @@ To get started with HoloLens, visit the [Windows Holographic Dev Center](https:/
 I want to offer special thanks to the following people who have helped me in building this sample app:
 - [Jarez Bienz](https://github.com/jbienzms), for the Text-to-Speech component that he wrote the the HoloLens Unity Toolkit, and for his help in integrating my UWP Bot Framework code into Unity
 - [Kat Haris](https://github.com/KatVHarris), for her awesome Unity skills and helping me with audio sources triggers
+- Vanessa Arnauld & Sara Nagy, for being incredible holographic "enablers" :)
 - The whole Microsoft Holographic Academy team & mentors - especially Pat - for their awesome training, resources, patience and help
 
 ## Follow Me
 * Twitter: [@ActiveNick](http://twitter.com/ActiveNick)
 * Blog: [AgeofMobility.com](http://AgeofMobility.com)
+* SlideShare: [http://www.slideshare.net/ActiveNick](http://www.slideshare.net/ActiveNick)
