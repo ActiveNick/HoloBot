@@ -37,6 +37,9 @@ bld/
 **/[Ll]ibrary/*
 **/[Tt]emp/
 
+# Ignore UWP folder for projects that target this
+**/[Uu]WP/*
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
@@ -57,7 +60,6 @@ dlldata.c
 *_p.c
 *_i.h
 *.ilk
-*.meta
 *.obj
 *.pch
 *.pdb
