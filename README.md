@@ -1,16 +1,16 @@
 # HoloBot
-A sample Unity project for [Microsoft HoloLens](http://hololens.com) that lets you interact with a floating robot head using speech recognition, and getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
+A starter mixed reality Unity project for [Microsoft HoloLens](http://hololens.com) that lets you interact with a floating robot head using speech recognition, and getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
 
-To get started with HoloLens, visit the [Windows Holographic Dev Center](https://developer.microsoft.com/windows/holographic).
+To get started with HoloLens development, visit the [Windows Holographic Dev Center](https://developer.microsoft.com/windows/holographic). The HoloLens Developer Kit is available for sale at http://hololens.com.
 
 ## Features
-- Hovering bot head (aka HoloBot) with looping sound
+- Hovering bot head (aka HoloBot) with looping ambient sound
 - Tap the HoloBot to move it to a different location, tap again to place
 - Gaze at the HoloBot to trigger the speech recognizer, you will hear a "Ping" sound
-- Speak "commands" using natural language
+- Speak "commands" to HoloBot using natural language
 - The HoloBot speaks back to you using Speech Synthesis (aka Text-to-Speech, or TTS)
-- All sounds and speech use spatial audio that originate from the HoloBot
-- The "brain" of the HoloBot can be any public bot built with the [Microsoft Bot Framework](https://dev.botframework.com/)
+- All sounds and speech use spatial sound that originate from the HoloBot
+- The "brain" of the HoloBot can be any public bot built with the [Microsoft Bot Framework](https://dev.botframework.com/). See bot integration instructions below
 
 ## Video Demonstration
 [![ScreenShot](Screenshots/HoloBotVideo.PNG)](https://youtu.be/8ozfw2LO6No)
@@ -27,8 +27,8 @@ The bot demonstrated in this video is [The Maker Show Bot, also found here on Gi
 ![All](Screenshots/PluginSettings.PNG)
 
 ## Connecting your Bot to HoloBot
-- Create and register your bot as per the intructions at https://dev.botframework.com. Since HoloBot uses free natural language dictation, it is highly recommended that your bot support NLP via [Natural Language Understanding Service](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) (LUIS) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services)
-- Enable the Direct Line channel on your bot
+- Create and register your bot as per the intructions at https://dev.botframework.com. Bots can be built with C# & ASP.NET WebAPI or Javascript & Node.js. Since HoloBot uses free natural language dictation, it is highly recommended that your bot support NLP via [Natural Language Understanding Service](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) (LUIS) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services)
+- From the Bot Connector portal, enable the Direct Line channel on your bot
 - Generate and copy your Direct Line secret (aka API key)
 - Open **BotService.cs** in the **/Scripts** folder of the HoloBot Unity project and paste your Direct Line secret in the **_APIKEY** private string
 
