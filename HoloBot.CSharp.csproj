@@ -221,7 +221,6 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\TextToSpeechManagerTest.cs" />
     <Compile Include="Assets\Scripts\BotService.cs" />
     <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
-    <Compile Include="Assets\Scripts\SpeechManager.cs" />
     <Compile Include="Assets\Scripts\TaptoPlace.cs" />
   </ItemGroup>
   <ItemGroup>
