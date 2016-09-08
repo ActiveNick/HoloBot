@@ -109,12 +109,15 @@ public class MicrophoneManager : MonoBehaviour
     {
         if (dictationRecognizer.Status != SpeechSystemStatus.Running)
         {
-            if (selectedSource != null)
-            {
-                selectedSource.Play();
+            if (!ttsAudioSrc.isPlaying)
+            { 
+                if (selectedSource != null)
+                {
+                    selectedSource.Play();
+                }
+                //animator.Play("Idle");
+                StartRecording();
             }
-            //animator.Play("Idle");
-            StartRecording();
         }
     }
 

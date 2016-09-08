@@ -130,7 +130,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:/Users/HAUser/Desktop/ActiveNick/HoloBot/Assets\..\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
+    <ProjectReference Include="C:/Dev/GitHub/HoloBot/Assets\..\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
       <Project>{194d914d-0664-444e-b663-4d0f1c80af68}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
