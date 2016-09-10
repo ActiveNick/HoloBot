@@ -7,6 +7,10 @@ using UnityEngine.Windows.Speech;
 using HoloToolkit.Unity;
 using MakerShowBotTestClient;
 
+/// <summary>
+/// MicrophoneManager lets us capture audio from the user and feed into speech recognition
+/// Make sure to enable the Microphone capability in the Windows 10 UWP Player Settings
+/// </summary>
 public class MicrophoneManager : MonoBehaviour
 {
     //[Tooltip("A text area for the recognizer to display the recognized strings.")]
@@ -105,10 +109,16 @@ public class MicrophoneManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Activate speech recognition only when the user looks straight at the bot
+    /// </summary>
     void OnGazeEnter()
     {
+        // Don't activate speech recognition if the recognizer is already running
         if (dictationRecognizer.Status != SpeechSystemStatus.Running)
         {
+            // Don't activate speech recognition if the speech synthesizer's audio source
+            // is still in active playback mode
             if (!ttsAudioSrc.isPlaying)
             { 
                 if (selectedSource != null)
@@ -167,6 +177,7 @@ public class MicrophoneManager : MonoBehaviour
         //DictationDisplay.text = textSoFar.ToString() + " " + text + "...";
     }
 
+    // This event handler's code only works in UWP (i.e. HoloLens)
 #if WINDOWS_UWP
     /// <summary>
     /// This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
@@ -211,7 +222,7 @@ public class MicrophoneManager : MonoBehaviour
         // Append textSoFar with latest text
         textSoFar.Append(text + ". ");
 
-        animator.Play("Happy");
+        animator.Play("Happy"); // TO DO: Need to fix, not working yet
         MyTTS.SpeakText(text);
         // Set DictationDisplay text to be textSoFar
         //DictationDisplay.text = textSoFar.ToString();

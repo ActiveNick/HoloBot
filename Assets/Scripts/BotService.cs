@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace MakerShowBotTestClient
 {
+    // This block of code won't run in Unity's older version of Mono
+    // This can only be run in a UWP device like the HoloLens
 #if WINDOWS_UWP
     class Conversation
     {
@@ -53,9 +55,16 @@ namespace MakerShowBotTestClient
     {
         public string Mainkey { get; set; }
     }
+
+    /// <summary>
+    /// The main service used to communicate with a Bot via the Bot Connector and the Direct Line Channel.
+    /// This can only run in a UWP client.
+    /// </summary>
     public class BotService
     {
-
+        // From the Bot Connector portal, enable the Direct Line channel on your bot
+        // Generate and copy your Direct Line secret (aka API key)
+        // TO DO: Please use your own key. This one connects to The Maker Show Bot
         private string _APIKEY = "PN3lBLvTXwU.cwA.Kb8.qA6OkFZcgx2hLRSAlteqKnCZqYcQD_orUi_kwyw6i8k";
         private string botToken;
         private string activeConversation;
@@ -63,7 +72,7 @@ namespace MakerShowBotTestClient
 
         public BotService()
         {
-
+            // Constructor
         }
 
         public async Task<string> StartConversation()
@@ -170,9 +179,14 @@ namespace MakerShowBotTestClient
             }
         }
     }
-    #endif
+#endif
 
-    #if !WINDOWS_UWP
+#if !WINDOWS_UWP
+
+    /// <summary>
+    /// This is an empty shim for the BotService within Unity Mono, otherwise we'd get a
+    /// compilation error in Unity when trying to instantiate this object.
+    /// </summary>
     public class BotService
     {
 

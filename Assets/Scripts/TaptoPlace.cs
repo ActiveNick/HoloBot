@@ -35,6 +35,8 @@ public class TaptoPlace : MonoBehaviour {
             var headPosition = Camera.main.transform.position;
             var gazeDirection = Camera.main.transform.forward;
 
+            // Not using spatial mapping for now, the bot can float anywhere and we're
+            // not expected to pin it to a wall or table
             //RaycastHit hitInfo;
             //if (Physics.Raycast(headPosition, gazeDirection, out hitInfo,
             //    30.0f, SpatialMapping.PhysicsRaycastMask))
