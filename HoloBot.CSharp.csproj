@@ -219,6 +219,11 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\PlaneTargetGroup.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\PlaneTargetGroupPicker.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\TextToSpeechManagerTest.cs" />
+    <Compile Include="Assets\Holograms\Support\Drone\DroneBottom.cs" />
+    <Compile Include="Assets\Holograms\Support\Drone\FriendlyDrone.cs" />
+    <Compile Include="Assets\Holograms\Support\Drone\StarArray.cs" />
+    <Compile Include="Assets\Holograms\Support\PlayerAvatar\PlayerAvatarParameters.cs" />
+    <Compile Include="Assets\Holograms\Support\SpatialMapping\EnergyOrbFinalImpactLifetime.cs" />
     <Compile Include="Assets\Scripts\BotService.cs" />
     <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
     <Compile Include="Assets\Scripts\TaptoPlace.cs" />
