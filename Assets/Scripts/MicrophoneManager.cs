@@ -17,12 +17,13 @@ public class MicrophoneManager : MonoBehaviour
     //public Text DictationDisplay;
 
     private DictationRecognizer dictationRecognizer;
+    private StringBuilder textSoFar;
 
     // Use this string to cache the text currently displayed in the text box.
-    private StringBuilder textSoFar;
     public Animator animator;
     public TextToSpeechManager MyTTS;
     public AudioSource selectedSource;
+    public Text captions;
 
     // Using an empty string specifies the default microphone. 
     private static string deviceName = string.Empty;
@@ -75,6 +76,8 @@ public class MicrophoneManager : MonoBehaviour
 
         // Use this string to cache the text currently displayed in the text box.
         textSoFar = new StringBuilder();
+
+        captions.text = "";
 
 #if WINDOWS_UWP
         var startTask = tmsBot.StartConversation();
@@ -189,7 +192,16 @@ public class MicrophoneManager : MonoBehaviour
         StopRecording();
 
         // Append textSoFar with latest text
-        textSoFar.Append(text + ". ");
+        textSoFar.Append(text);
+
+        // Set DictationDisplay text to be textSoFar
+        //DictationDisplay.text = textSoFar.ToString();
+
+        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+        {
+            // Display captions for the question
+            captions.text = text;
+        }, false); 
 
         string msg = text;
         string result = "I'm sorry, I'm not sure how to answer that";
@@ -205,8 +217,12 @@ public class MicrophoneManager : MonoBehaviour
 
         //animator.Play("Happy");
         MyTTS.SpeakText(result);
-        // Set DictationDisplay text to be textSoFar
-        //DictationDisplay.text = textSoFar.ToString();
+
+        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+        {
+            // Display captions for the question
+            captions.text = result;
+        }, false);     
     }
 
 #else
@@ -220,10 +236,13 @@ public class MicrophoneManager : MonoBehaviour
     {
         StopRecording();
         // Append textSoFar with latest text
-        textSoFar.Append(text + ". ");
+        textSoFar.Append(text);
 
-        animator.Play("Happy"); // TO DO: Need to fix, not working yet
+        captions.text = text;
+
+        //animator.Play("Happy"); // TO DO: Need to fix, not working yet
         MyTTS.SpeakText(text);
+
         // Set DictationDisplay text to be textSoFar
         //DictationDisplay.text = textSoFar.ToString();
     }
