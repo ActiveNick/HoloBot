@@ -120,6 +120,7 @@
     <Compile Include="Assets\HoloToolkit\Build\Editor\BuildDeployWindow.cs" />
     <Compile Include="Assets\HoloToolkit\Build\Editor\BuildSLNUtilities.cs" />
     <Compile Include="Assets\HoloToolkit\Build\Editor\HoloToolkitCommands.cs" />
+    <Compile Include="Assets\HoloToolkit\Build\Editor\XdeGuestLocator.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Editor\SharingMenu.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioManagerBaseEditor.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioManagerEditor.cs" />
@@ -134,6 +135,8 @@
     <None Include="Assets\HoloToolkit\Input\Shaders\CursorShader.shader" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Occlusion.shader" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Wireframe.shader" />
+    <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialMappingSurface.shader" />
+    <None Include="Assets\HoloToolkit\SpatialUnderstanding\Materials\SpatialUnderstandingSurface.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\BlinnPhongConfigurable.cginc" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\BlinnPhongConfigurable.shader" />
     <None Include="Assets\HoloToolkit\Utilities\Shaders\BlinnPhongConfigurableTransparent.shader" />

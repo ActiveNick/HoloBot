@@ -24,19 +24,19 @@ public class MicrophoneManager : MonoBehaviour
     public TextToSpeechManager MyTTS;
     public AudioSource selectedSource;
     public Text captions;
+    public Billboard billboard;
 
     // Using an empty string specifies the default microphone. 
     private static string deviceName = string.Empty;
-    private int samplingRate;
+    //private int samplingRate;
     private const int messageLength = 10;
     private BotService tmsBot = new BotService();
     private AudioSource[] audioSources;
-    private Billboard billboard;
     private AudioSource ttsAudioSrc;
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
        
         // Create a new DictationRecognizer and assign it to dictationRecognizer variable.
         dictationRecognizer = new DictationRecognizer();
@@ -79,15 +79,14 @@ public class MicrophoneManager : MonoBehaviour
 
         captions.text = "";
 
+        //billboard.enabled = false;
+
 #if WINDOWS_UWP
         var startTask = tmsBot.StartConversation();
         startTask.Wait();
         // startTask.Result;
 #endif
 
-        billboard = this.gameObject.AddComponent<Billboard>();
-        billboard.PivotAxis = PivotAxis.Y;
-        billboard.enabled = false;
     }
 
     void Update()
@@ -109,7 +108,7 @@ public class MicrophoneManager : MonoBehaviour
         {
             billboard.enabled = false;
         }
-        
+
     }
 
     /// <summary>
