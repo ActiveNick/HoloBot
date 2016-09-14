@@ -23,7 +23,8 @@ public class MicrophoneManager : MonoBehaviour
     public Animator animator;
     public TextToSpeechManager MyTTS;
     public AudioSource selectedSource;
-    public Text captions;
+    //public Text captions;
+    public CaptionsManager captionsManager;
     public Billboard billboard;
 
     // Using an empty string specifies the default microphone. 
@@ -77,7 +78,7 @@ public class MicrophoneManager : MonoBehaviour
         // Use this string to cache the text currently displayed in the text box.
         textSoFar = new StringBuilder();
 
-        captions.text = "";
+        captionsManager.SetCaptionsText("");
 
         //billboard.enabled = false;
 
@@ -122,15 +123,29 @@ public class MicrophoneManager : MonoBehaviour
             // Don't activate speech recognition if the speech synthesizer's audio source
             // is still in active playback mode
             if (!ttsAudioSrc.isPlaying)
-            { 
+            {
+                //captionsManager.ToggleKeywordRecognizer(false);
                 if (selectedSource != null)
                 {
                     selectedSource.Play();
                 }
                 //animator.Play("Idle");
+                //StartCoroutine(CoStartRecording());
                 StartRecording();
             }
         }
+    }
+
+    //IEnumerator CoStartRecording()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    StartRecording();
+    //}
+
+    void OnGazeLeave()
+    {
+        StopRecording();
+        //captionsManager.ToggleKeywordRecognizer(true);
     }
 
     /// <summary>
@@ -150,6 +165,8 @@ public class MicrophoneManager : MonoBehaviour
 
         // Start recording from the microphone for 10 seconds
         //return Microphone.Start(deviceName, false, messageLength, samplingRate);
+
+        Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
     }
 
     /// <summary>
@@ -166,6 +183,10 @@ public class MicrophoneManager : MonoBehaviour
         //animator.Play("Idle");
 
         //Microphone.End(deviceName);
+
+        //StartCoroutine("RestartSpeechSystem");
+
+        Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
     }
 
     /// <summary>
@@ -199,7 +220,7 @@ public class MicrophoneManager : MonoBehaviour
         UnityEngine.WSA.Application.InvokeOnAppThread(() =>
         {
             // Display captions for the question
-            captions.text = text;
+            captionsManager.SetCaptionsText(text);
         }, false); 
 
         string msg = text;
@@ -220,7 +241,7 @@ public class MicrophoneManager : MonoBehaviour
         UnityEngine.WSA.Application.InvokeOnAppThread(() =>
         {
             // Display captions for the question
-            captions.text = result;
+            captionsManager.SetCaptionsText(result);
         }, false);     
     }
 
@@ -237,7 +258,7 @@ public class MicrophoneManager : MonoBehaviour
         // Append textSoFar with latest text
         textSoFar.Append(text);
 
-        captions.text = text;
+        captionsManager.SetCaptionsText(text);
 
         //animator.Play("Happy"); // TO DO: Need to fix, not working yet
         MyTTS.SpeakText(text);
@@ -277,13 +298,18 @@ public class MicrophoneManager : MonoBehaviour
         //DictationDisplay.text = error + "\nHRESULT: " + hresult;
     }
 
-    //private IEnumerator RestartSpeechSystem(KeywordManager keywordToStart)
+    //private IEnumerator RestartSpeechSystem()
     //{
     //    while (dictationRecognizer != null && dictationRecognizer.Status == SpeechSystemStatus.Running)
     //    {
     //        yield return null;
     //    }
+    //    if (PhraseRecognitionSystem.Status == SpeechSystemStatus.Stopped)
+    //    {
+    //        PhraseRecognitionSystem.Restart();
+    //    }
 
-    //    keywordToStart.StartKeywordRecognizer();
+    //    //keywordToStart.StartKeywordRecognizer();
+    //    //captionsManager.ToggleKeywordRecognizer(true);
     //}
 }

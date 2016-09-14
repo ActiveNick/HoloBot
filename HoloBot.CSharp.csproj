@@ -243,6 +243,7 @@
     <Compile Include="Assets\Holograms\Support\PlayerAvatar\PlayerAvatarParameters.cs" />
     <Compile Include="Assets\Holograms\Support\SpatialMapping\EnergyOrbFinalImpactLifetime.cs" />
     <Compile Include="Assets\Scripts\BotService.cs" />
+    <Compile Include="Assets\Scripts\CaptionsManager.cs" />
     <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
     <Compile Include="Assets\Scripts\TaptoPlace.cs" />
   </ItemGroup>
