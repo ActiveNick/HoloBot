@@ -142,11 +142,11 @@ public class MicrophoneManager : MonoBehaviour
     //    StartRecording();
     //}
 
-    void OnGazeLeave()
-    {
-        StopRecording();
-        //captionsManager.ToggleKeywordRecognizer(true);
-    }
+    //void OnGazeLeave()
+    //{
+    //    StopRecording();
+    //    //captionsManager.ToggleKeywordRecognizer(true);
+    //}
 
     /// <summary>
     /// Turns on the dictation recognizer and begins recording audio from the default microphone.
