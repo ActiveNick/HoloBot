@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 #include "HLSLSupport.cginc"
 #include "UnityCG.cginc"
 #include "Lighting.cginc"
@@ -57,7 +59,7 @@ v2f_surf vert(appdata_t v)
     v2f_surf o;
     UNITY_INITIALIZE_OUTPUT(v2f_surf, o);
 
-    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+    o.pos = UnityObjectToClipPos(v.vertex);
 
     #if _USEMAINTEX_ON || _USEEMISSIONTEX_ON
         o.pack0.xy = TRANSFORM_TEX(v.texcoord, _MainTex);

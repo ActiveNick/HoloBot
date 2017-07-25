@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 ///
 /// Simple occlusion shader that can be used to hide other objects.
 /// This prevents other objects from being rendered by drawing invisible 'opaque' pixels to the depth buffer.
@@ -37,7 +39,7 @@ Shader "HoloToolkit/WindowOcclusion"
             v2f vert(appdata_base v)
             {
                 v2f o;
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
                 return o;
             }
 
