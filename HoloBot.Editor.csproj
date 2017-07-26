@@ -129,7 +129,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HoloToolkit\Sharing\Editor\SharingMenu.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioManagerBaseEditor.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioManagerEditor.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\Editor\UAudioMiniManagerEditor.cs" />

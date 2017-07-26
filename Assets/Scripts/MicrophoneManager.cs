@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using HoloToolkit.Unity;
-using MakerShowBotTestClient;
+using HoloBot;
 
 /// <summary>
 /// MicrophoneManager lets us capture audio from the user and feed into speech recognition
@@ -228,10 +228,10 @@ public class MicrophoneManager : MonoBehaviour
 
         if (await tmsBot.SendMessage(msg))
         {
-            ConversationMessages messages = await tmsBot.GetMessages();
-            for (int i = 1; i < messages.messages.Length; i++)
+            ConversationActitvities messages = await tmsBot.GetMessages();
+            for (int i = 1; i < messages.activities.Length; i++)
             {
-                result = messages.messages[i].text;
+                result = messages.activities[i].text;
             }
         }
 
