@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 #include "UnityCG.cginc"
 
 #if _USEMAINTEX_ON
@@ -17,6 +15,7 @@ struct appdata_t
     #if _USEMAINTEX_ON
         float2 texcoord : TEXCOORD0;
     #endif
+    UNITY_VERTEX_INPUT_INSTANCE_ID
 };
 
 struct v2f
@@ -29,10 +28,12 @@ struct v2f
     #if _NEAR_PLANE_FADE_ON
         float fade : TEXCOORD2;
     #endif
+    UNITY_VERTEX_OUTPUT_STEREO
 };
 
 v2f vert(appdata_t v)
 {
+    UNITY_SETUP_INSTANCE_ID(v);
     v2f o;
     o.vertex = UnityObjectToClipPos(v.vertex);
 
@@ -45,6 +46,7 @@ v2f vert(appdata_t v)
     #endif
 
     UNITY_TRANSFER_FOG(o, o.vertex);
+    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     return o;
 }
 

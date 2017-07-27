@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using HoloToolkit.Unity;
+using HoloToolkit.Unity.InputModule;
 using HoloBot;
+using System;
 
 /// <summary>
 /// MicrophoneManager lets us capture audio from the user and feed into speech recognition
 /// Make sure to enable the Microphone capability in the Windows 10 UWP Player Settings
 /// </summary>
-public class MicrophoneManager : MonoBehaviour
+public class MicrophoneManager : MonoBehaviour, IFocusable
 {
     //[Tooltip("A text area for the recognizer to display the recognized strings.")]
     //public Text DictationDisplay;
@@ -101,21 +103,21 @@ public class MicrophoneManager : MonoBehaviour
         //    // Look at the StopRecording function.
         //    SendMessage("RecordStop");
         //}
-        if (ttsAudioSrc.isPlaying)
-        {
-            billboard.enabled = true;
-        }
-        else
-        {
-            billboard.enabled = false;
-        }
+        //if (ttsAudioSrc.isPlaying)
+        //{
+        //    billboard.enabled = true;
+        //}
+        //else
+        //{
+        //    billboard.enabled = false;
+        //}
 
     }
 
     /// <summary>
     /// Activate speech recognition only when the user looks straight at the bot
     /// </summary>
-    void OnGazeEnter()
+    public void OnFocusEnter()
     {
         // Don't activate speech recognition if the recognizer is already running
         if (dictationRecognizer.Status != SpeechSystemStatus.Running)
@@ -142,11 +144,11 @@ public class MicrophoneManager : MonoBehaviour
     //    StartRecording();
     //}
 
-    //void OnGazeLeave()
-    //{
+    public void OnFocusExit()
+    {
     //    StopRecording();
     //    //captionsManager.ToggleKeywordRecognizer(true);
-    //}
+    }
 
     /// <summary>
     /// Turns on the dictation recognizer and begins recording audio from the default microphone.

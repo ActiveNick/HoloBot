@@ -3,13 +3,14 @@ Take your bots beyond Skype, Slack, Microsoft Teams and Facebook and bring them 
 
 HoloBot is reusable Windows Mixed Reality Unity project for [Microsoft HoloLens](http://hololens.com) that acts as a holographic client for a chatbot. This 3D app lets you interact with a floating robot head using speech recognition, getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
 
-**Unity version:** 5.6.2f1 (release)
+- **Unity version:** 5.6.2f1 (release)
+- **HoloToolkit version:** 1.5.8
 
 To get started with HoloLens & Windows Mixed Reality development, visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/en-us/windows/mixed-reality). The HoloLens Developer Kit is available for sale in several countries at http://hololens.com.
 
 ## Features
 - Hovering bot head (aka HoloBot) with looping ambient sound.
-- Tap the HoloBot to move it to a different location, tap again to place.
+- Tap & hold the HoloBot to drag it to a different location, drop the hold to place.
 - Gaze at the HoloBot to trigger the speech recognizer, you will hear a "ping" sound.
 - Speak "commands" to HoloBot using natural language. HoloBot has only been tested with English for now.
 - The HoloBot speaks back to you using Speech Synthesis (aka Text-to-Speech, or TTS).
@@ -21,11 +22,13 @@ To get started with HoloLens & Windows Mixed Reality development, visit the [Win
 
 The bot demonstrated in this video is [The Maker Show Bot, also found here on GitHub](https://github.com/ActiveNick/TheMakerShowBot). Feel free to fork the code and plug HoloBot to your own chatbot.
 
-## Instructions / Notes
+## Instructions / Implementation Notes
 - The HoloBot model and sounds come from the [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) tutorial: [Holograms 240: Sharing Holograms].(https://developer.microsoft.com/en-us/windows/holographic/holograms_240).
-- Uses Gaze Manager & Gesture Manager from [HoloToolkit for Unity](https://github.com/microsoft/HoloToolkit-Unity) (Input scripts).
+- HoloBot has finally been upgraded to a recent version of the HoloToolkit for Unity. See above for the specific version.
+- Uses the InputManager from [HoloToolkit for Unity](https://github.com/microsoft/HoloToolkit-Unity) (prefab) for Gaze & Gesture management.
+- Now using the **Hand Draggable** script instead omn custom **Tap to Place**.
+- **MicrophoneManager.cs** now implements **IFocusable** for Gaze events (enter/leave), which triggers the speech recording. 
 - Uses Text to Speech Manager from [HoloToolkit for Unity](https://github.com/microsoft/HoloToolkit-Unity) (Utilities scripts).
-- HoloBot still uses an older version of the HoloToolkit for Unity from September 2016. This will be upgraded to the latest version soon.
 - Make sure to copy a UWP build of **Newtonsoft.Json.dll** in the **/Plugins** folder of the HoloBot Unity project.
 - Edit the Inspector settings for the **Newtonsoft.Json.dll** plugin as follows:
 
