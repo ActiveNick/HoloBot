@@ -231,9 +231,24 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         if (await tmsBot.SendMessage(msg))
         {
             ConversationActitvities messages = await tmsBot.GetMessages();
+            if(messages.activities.Length > 0) 
+            {
+                result = "";
+            }
+
+            // Note that attachments (like cards) are still not supported
             for (int i = 1; i < messages.activities.Length; i++)
             {
-                result = messages.activities[i].text;
+                // We focus on the speak tag if the bot was speech-enabled.
+                // Otherwise we'll just speak the default text instead.
+                if(messages.activities[i].speak.Length > 0)
+                {
+                    result += (messages.activities[i].speak + " ");
+                } 
+                else
+                {
+                    result += (messages.activities[i].text + " ");
+                }
             }
         }
 
