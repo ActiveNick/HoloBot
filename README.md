@@ -3,8 +3,11 @@ Take your bots beyond Skype, Slack, Microsoft Teams and Facebook and bring them 
 
 HoloBot is reusable Windows Mixed Reality Unity project for [Microsoft HoloLens](http://hololens.com) that acts as a holographic client for a chatbot. This 3D app lets you interact with a floating robot head using speech recognition, getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
 
-- **Unity version:** 5.6.2f1 (release)
+- **Unity version:** 5.6.3p2 ([download here](https://beta.unity3d.com/download/b3d7a6428558/UnityDownloadAssistant-5.6.3p2.exe))
 - **HoloToolkit version:** 1.5.8
+
+** IMPORTANT NOTES ABOUT UNITY VERSION **
+HoloBot will NOT work with Unity 2017.1 or Unity 2017.2. The current version of Unity recommended for HoloLens development is Unity 2017.1.2f1 but since HoloBot is an old project that dates back to Unity 5.4 MRTP, there are old artifects in there causing issues, including [this bug](https://issuetracker.unity3d.com/issues/console-rendertexture-dot-generatemips-failed-errors-are-thrown-when-entering-play-mode) that is getting fixed in 2017.2. Unity 2017.2.0-MRTP3 is still the latest version recommended for immersive MR (but not HoloLens). Once all Unity versions for MR converge around an upcoming version, I will rebuild/upgrade HoloBot around that version (most likely Unity 2017.2.x). In the meantime, please use the version recommended above.
 
 To get started with HoloLens & Windows Mixed Reality development, visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/en-us/windows/mixed-reality). The HoloLens Developer Kit is available for sale in several countries at http://hololens.com.
 
