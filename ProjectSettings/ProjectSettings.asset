@@ -573,11 +573,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HoloBot
   metroPackageVersion: 1.0.1.0
-  metroCertificatePath: Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 807f26118311d301
+  metroCertificateNotAfter: 00627b035a71d401
   metroApplicationDescription: HoloBot
   wsaImages: {}
   metroTileShortName: 
