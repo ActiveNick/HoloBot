@@ -22,20 +22,27 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     private StringBuilder textSoFar;
 
     // Use this string to cache the text currently displayed in the text box.
+    //public Text captions;
     public Animator animator;
     public TextToSpeechManager MyTTS;
-    public AudioSource selectedSource;
-    //public Text captions;
     public CaptionsManager captionsManager;
     public Billboard billboard;
 
     // Using an empty string specifies the default microphone. 
     private static string deviceName = string.Empty;
     //private int samplingRate;
+
+    // Max recording duration (currently unused)
     private const int messageLength = 10;
+
+    // Client object to communicate with the Bot Service
     private BotService tmsBot = new BotService();
+
+    // Audio sources, including the one used for TTS playback
+    // SelectedSource is used to play the audible Ping sound when speech recording starts
     private AudioSource[] audioSources;
     private AudioSource ttsAudioSrc;
+    public AudioSource selectedSource;
 
     void Awake()
     {
@@ -60,17 +67,19 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         // This event is fired when an error occurs.
         dictationRecognizer.DictationError += DictationRecognizer_DictationError;
 
+        // Loop through Audio Sources on this gameobject to find the empty one
+        // that will be used for TTS playbacl
         audioSources = this.GetComponents<AudioSource>();
         foreach (AudioSource a in audioSources)
         {
             if (a.clip == null)
             {
-                ttsAudioSrc = a;
+                ttsAudioSrc = a; // Used for TTS playback
             }
             
             if ((a.clip != null) && (a.clip.name == "Ping"))
             {
-                selectedSource = a;
+                selectedSource = a; // Used to play a ping sound when speech recording starts
             }
         }
         // Query the maximum frequency of the default microphone. Use 'unused' to ignore the minimum frequency.
@@ -85,6 +94,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         //billboard.enabled = false;
 
 #if WINDOWS_UWP
+        // Initialize the Bot Framework client before we can send requests in
         var startTask = tmsBot.StartConversation();
         startTask.Wait();
         // startTask.Result;
@@ -216,7 +226,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         // Append textSoFar with latest text
         textSoFar.Append(text);
 
-        // Set DictationDisplay text to be textSoFar
+        // Set DictationDisplay text to be textSoFar as return by hypothesis
         //DictationDisplay.text = textSoFar.ToString();
 
         UnityEngine.WSA.Application.InvokeOnAppThread(() =>
