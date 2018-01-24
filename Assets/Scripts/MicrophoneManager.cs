@@ -24,7 +24,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     // Use this string to cache the text currently displayed in the text box.
     //public Text captions;
     public Animator animator;
-    public TextToSpeechManager MyTTS;
+    public TextToSpeech MyTTS;
     public CaptionsManager captionsManager;
     public Billboard billboard;
 
@@ -263,7 +263,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         }
 
         //animator.Play("Happy");
-        MyTTS.SpeakText(result);
+        MyTTS.StartSpeaking(result);
 
         UnityEngine.WSA.Application.InvokeOnAppThread(() =>
         {
@@ -288,7 +288,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         captionsManager.SetCaptionsText(text);
 
         //animator.Play("Happy"); // TO DO: Need to fix, not working yet
-        MyTTS.SpeakText(text);
+        MyTTS.StartSpeaking(text);
 
         // Set DictationDisplay text to be textSoFar
         //DictationDisplay.text = textSoFar.ToString();
