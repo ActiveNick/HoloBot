@@ -229,11 +229,11 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         // Set DictationDisplay text to be textSoFar as return by hypothesis
         //DictationDisplay.text = textSoFar.ToString();
 
-        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
-        {
+        //UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+        //{
             // Display captions for the question
             captionsManager.SetCaptionsText(text);
-        }, false); 
+        //}, false); 
 
         string msg = text;
         string result = "I'm sorry, I'm not sure how to answer that";
@@ -265,11 +265,11 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         //animator.Play("Happy");
         MyTTS.StartSpeaking(result);
 
-        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
-        {
+        //UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+        //{
             // Display captions for the question
             captionsManager.SetCaptionsText(result);
-        }, false);     
+        //}, false);     
     }
 
 #else
