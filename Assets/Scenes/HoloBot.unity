@@ -7165,7 +7165,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228078666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
   m_Name: 
@@ -7183,10 +7183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae566f54d0461a741a22402ff3d6de9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 228078670}
   MyTTS: {fileID: 1992642564}
   captionsManager: {fileID: 1656220370}
-  billboard: {fileID: 0}
   selectedSource: {fileID: 228078677}
 --- !u!82 &228078675
 AudioSource:
@@ -7199,7 +7197,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a72c1932e09e1eb42a332eb0ed3e969f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7434,7 +7432,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228078666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c655338633f4544180b3d90a593ac17, type: 3}
   m_Name: 
@@ -18287,7 +18285,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 921449246}
-  m_LocalRotation: {x: 0.512043, y: -0.50838566, z: 0.49205205, w: 0.48707384}
+  m_LocalRotation: {x: 0.51204294, y: -0.5083856, z: 0.492052, w: 0.48707378}
   m_LocalPosition: {x: 0.0004259331, y: -0.04986445, z: 0.012432733}
   m_LocalScale: {x: 0.3937008, y: 0.39370078, z: 0.39370075}
   m_Children: []
@@ -39413,6 +39411,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114504390558679740, guid: d29bc40b7f3df26479d6a0aac211c355,
+        type: 2}
+      propertyPath: NearClipPlane_TransparentDisplay
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d29bc40b7f3df26479d6a0aac211c355, type: 2}
   m_IsPrefabParent: 0
@@ -42876,6 +42879,7 @@ GameObject:
   - component: {fileID: 1992642563}
   - component: {fileID: 1992642564}
   - component: {fileID: 1992642565}
+  - component: {fileID: 1992642566}
   m_Layer: 0
   m_Name: HoloBot
   m_TagString: Untagged
@@ -42927,6 +42931,21 @@ MonoBehaviour:
   PositionLerpSpeed: 0.2
   RotationLerpSpeed: 0.2
   IsDraggingEnabled: 1
+--- !u!114 &1992642566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992642562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906323c940a3fad4f8f7e9e4fcd747f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerObject: {fileID: 0}
+  alignmentType: 0
+  stationarySpaceTypePosition: {x: 0, y: 0, z: 0}
+  roomScaleSpaceTypePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2011846188 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000013851064060, guid: b2db04283121ca74495c2ee000fb4243,
