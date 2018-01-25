@@ -131,9 +131,7 @@ namespace HoloBot
                     botToken = myConversation.token;
                     return myConversation.conversationId;
                 }
-
             }
-
             return "Error";
         }
 

@@ -57,11 +57,11 @@ public class CaptionsManager : MonoBehaviour
 
     public void SetCaptionsText(string message)
     {
-        UnityEngine.WSA.Application.InvokeOnAppThread(() =>
-        {
+        //UnityEngine.WSA.Application.InvokeOnAppThread(() =>
+        //{
             // Display captions if they are enabled
             captions.text = (isCaptionsOn) ? message : "";
-        }, false);
+        //}, false);
     }
 
     //public void ToggleKeywordRecognizer(bool state)

@@ -44,10 +44,17 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     private AudioSource ttsAudioSrc;
     public AudioSource selectedSource;
 
-    void Awake()
+    async void Awake()
     {
+#if WINDOWS_UWP
+        // Initialize the Bot Framework client before we can send requests in
+        await tmsBot.StartConversation();
+        //startTask.Wait();
+        // startTask.Result;
+#endif
+
         //animator = GetComponent<Animator>();
-       
+
         // Create a new DictationRecognizer and assign it to dictationRecognizer variable.
         dictationRecognizer = new DictationRecognizer();
 
@@ -92,14 +99,6 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         captionsManager.SetCaptionsText("");
 
         //billboard.enabled = false;
-
-#if WINDOWS_UWP
-        // Initialize the Bot Framework client before we can send requests in
-        var startTask = tmsBot.StartConversation();
-        startTask.Wait();
-        // startTask.Result;
-#endif
-
     }
 
     void Update()
