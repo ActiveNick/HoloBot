@@ -23,10 +23,9 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
 
     // Use this string to cache the text currently displayed in the text box.
     //public Text captions;
-    public Animator animator;
+    //public Animator animator;
     public TextToSpeech MyTTS;
     public CaptionsManager captionsManager;
-    public Billboard billboard;
 
     // Using an empty string specifies the default microphone. 
     private static string deviceName = string.Empty;
@@ -44,13 +43,18 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     private AudioSource ttsAudioSrc;
     public AudioSource selectedSource;
 
+    // Awake was made async so we can await the StartConversation Task
+    // DO NOT call Task.Wait() from the main thread or things will lock-up once you await 
+    // a call inside the task.
+    // Use regular Awake in non-UWP or else the Unity editor compiler will complain
+#if WINDOWS_UWP
     async void Awake()
     {
-#if WINDOWS_UWP
         // Initialize the Bot Framework client before we can send requests in
         await tmsBot.StartConversation();
-        //startTask.Wait();
-        // startTask.Result;
+#else
+    void Awake()
+    {
 #endif
 
         //animator = GetComponent<Animator>();
@@ -75,7 +79,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         dictationRecognizer.DictationError += DictationRecognizer_DictationError;
 
         // Loop through Audio Sources on this gameobject to find the empty one
-        // that will be used for TTS playbacl
+        // that will be used for TTS playback
         audioSources = this.GetComponents<AudioSource>();
         foreach (AudioSource a in audioSources)
         {
@@ -97,29 +101,10 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         textSoFar = new StringBuilder();
 
         captionsManager.SetCaptionsText("");
-
-        //billboard.enabled = false;
     }
 
     void Update()
     {
-
-        // Add condition to check if dictationRecognizer.Status is Running
-        //if (!Microphone.IsRecording(deviceName) && dictationRecognizer.Status == SpeechSystemStatus.Running)
-        //{
-        //    // This acts like pressing the Stop button and sends the message to the Communicator.
-        //    // If the microphone stops as a result of timing out, make sure to manually stop the dictation recognizer.
-        //    // Look at the StopRecording function.
-        //    SendMessage("RecordStop");
-        //}
-        //if (ttsAudioSrc.isPlaying)
-        //{
-        //    billboard.enabled = true;
-        //}
-        //else
-        //{
-        //    billboard.enabled = false;
-        //}
 
     }
 
@@ -147,16 +132,9 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         }
     }
 
-    //IEnumerator CoStartRecording()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    StartRecording();
-    //}
-
     public void OnFocusExit()
     {
-    //    StopRecording();
-    //    //captionsManager.ToggleKeywordRecognizer(true);
+        // Do nothing, let the user keep talking even if they look away
     }
 
     /// <summary>
@@ -165,17 +143,8 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     /// <returns>The audio clip recorded from the microphone.</returns>
     public void StartRecording()
     {
-        // Shutdown the PhraseRecognitionSystem. This controls the KeywordRecognizers
-        //PhraseRecognitionSystem.Shutdown();
-        //animator.Stop();
-
         // Start dictationRecognizer
         dictationRecognizer.Start();
-
-        //DictationDisplay.text = "Dictation is starting. It may take time to display your text the first time, but begin speaking now...";
-
-        // Start recording from the microphone for 10 seconds
-        //return Microphone.Start(deviceName, false, messageLength, samplingRate);
 
         Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
     }
@@ -191,12 +160,6 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
             dictationRecognizer.Stop();
         }
 
-        //animator.Play("Idle");
-
-        //Microphone.End(deviceName);
-
-        //StartCoroutine("RestartSpeechSystem");
-
         Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
     }
 
@@ -207,8 +170,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     private void DictationRecognizer_DictationHypothesis(string text)
     {
         // Set DictationDisplay text to be textSoFar and new hypothesized text
-        // We don't want to append to textSoFar yet, because the hypothesis may have changed on the next event
-        //DictationDisplay.text = textSoFar.ToString() + " " + text + "...";
+        // Currently unused
     }
 
     // This event handler's code only works in UWP (i.e. HoloLens)
@@ -264,11 +226,8 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         //animator.Play("Happy");
         MyTTS.StartSpeaking(result);
 
-        //UnityEngine.WSA.Application.InvokeOnAppThread(() =>
-        //{
-            // Display captions for the question
-            captionsManager.SetCaptionsText(result);
-        //}, false);     
+        // Display captions for the question
+        captionsManager.SetCaptionsText(result);
     }
 
 #else
@@ -306,10 +265,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         // The default timeout with initial silence is 5 seconds.
         if (cause == DictationCompletionCause.TimeoutExceeded)
         {
-            //Microphone.End(deviceName);
 
-            //DictationDisplay.text = "Dictation has timed out. Please press the record button again.";
-            //SendMessage("ResetAfterTimeout");
         }
     }
 
@@ -320,22 +276,6 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     /// <param name="hresult">The int representation of the hresult.</param>
     private void DictationRecognizer_DictationError(string error, int hresult)
     {
-        // Set DictationDisplay text to be the error string
-        //DictationDisplay.text = error + "\nHRESULT: " + hresult;
+
     }
-
-    //private IEnumerator RestartSpeechSystem()
-    //{
-    //    while (dictationRecognizer != null && dictationRecognizer.Status == SpeechSystemStatus.Running)
-    //    {
-    //        yield return null;
-    //    }
-    //    if (PhraseRecognitionSystem.Status == SpeechSystemStatus.Stopped)
-    //    {
-    //        PhraseRecognitionSystem.Restart();
-    //    }
-
-    //    //keywordToStart.StartKeywordRecognizer();
-    //    //captionsManager.ToggleKeywordRecognizer(true);
-    //}
 }

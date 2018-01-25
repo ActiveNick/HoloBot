@@ -258,7 +258,7 @@ namespace HoloBot
     /// </summary>
     public class BotService
     {
-
+        // This class left intentionally blank, read comment above :)
     }
 #endif
 }
