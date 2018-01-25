@@ -1,14 +1,12 @@
 # HoloBot
 Take your bots beyond Skype, Slack, Microsoft Teams and Facebook and bring them into the real world with Mixed Reality. Why simply type-chat with a bot when you could actually look at them, talk to them and listen to their answers?
 
-HoloBot is reusable Windows Mixed Reality Unity project for [Microsoft HoloLens](http://hololens.com) that acts as a holographic client for a chatbot. This 3D app lets you interact with a floating robot head using speech recognition, getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
+HoloBot is reusable Windows Mixed Reality Unity project for [Microsoft HoloLens](http://hololens.com) and immersive VR headsets that acts as a holographic client for a chatbot. This 3D app lets you interact with a floating robot head using speech recognition, getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
 
-- **Unity version:** 5.6.3p2 ([download here](https://beta.unity3d.com/download/b3d7a6428558/UnityDownloadAssistant-5.6.3p2.exe))
-- **HoloToolkit version:** 1.5.8
+- **Unity version:** 2017.2.1p2
+- **Mixed Reality Toolkit (MRTK) version:** 2017.2.1.1 patch release
 
-**IMPORTANT NOTES ABOUT UNITY VERSION**
-
-HoloBot will NOT work with Unity 2017.1 or Unity 2017.2. The current version of Unity recommended for HoloLens development is Unity 2017.1.2f1 but since HoloBot is an old project that dates back to Unity 5.4 MRTP, there are old artifects in there causing issues, including [this bug](https://issuetracker.unity3d.com/issues/console-rendertexture-dot-generatemips-failed-errors-are-thrown-when-entering-play-mode) that is getting fixed in 2017.2. Unity 2017.2.0-MRTP3 is still the latest version recommended for immersive MR (but not HoloLens). Once all Unity versions for MR converge around an upcoming version, I will rebuild/upgrade HoloBot around that version (most likely Unity 2017.2.x). In the meantime, please use the version recommended above.
+*Note for Unity 5.x users:* Now that HoloBot has been upgraded to Unity 2017.2, I have archived the previous version for Unity 5.6.3p2 in a separate dev branch ([download Unity 5.6.3p2 here](https://beta.unity3d.com/download/b3d7a6428558/UnityDownloadAssistant-5.6.3p2.exe)). Note that this legacy version of HoloBot is only provided for archival purposes and this branch will no longer be worked on.
 
 To get started with HoloLens & Windows Mixed Reality development, visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/en-us/windows/mixed-reality). The HoloLens Developer Kit is available for sale in several countries at http://hololens.com.
 
@@ -29,14 +27,11 @@ The bot demonstrated in this video is [The Maker Show Bot, also found here on Gi
 ## Instructions / Implementation Notes
 - The HoloBot model and sounds come from the [Holographic Academy](https://developer.microsoft.com/en-us/windows/holographic/academy) tutorial: [Holograms 240: Sharing Holograms].(https://developer.microsoft.com/en-us/windows/holographic/holograms_240).
 - HoloBot has finally been upgraded to a recent version of the HoloToolkit for Unity. See above for the specific version.
-- Uses the InputManager from [HoloToolkit for Unity](https://github.com/microsoft/HoloToolkit-Unity) (prefab) for Gaze & Gesture management.
-- Now using the **Hand Draggable** script instead omn custom **Tap to Place**.
-- **MicrophoneManager.cs** now implements **IFocusable** for Gaze events (enter/leave), which triggers the speech recording. 
-- Uses Text to Speech Manager from [HoloToolkit for Unity](https://github.com/microsoft/HoloToolkit-Unity) (Utilities scripts).
-- Make sure to copy a UWP build of **Newtonsoft.Json.dll** in the **/Plugins** folder of the HoloBot Unity project.
-- Edit the Inspector settings for the **Newtonsoft.Json.dll** plugin as follows:
-
-![All](Screenshots/PluginSettings.PNG)
+- Uses the InputManager from [MRTK for Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity) (prefab) for Gaze & Gesture management.
+- Now using the **Hand Draggable** script instead of my own custom **Tap to Place**.
+- **MicrophoneManager.cs** now implements **IFocusable** for Gaze/Input Controller events (enter/leave), which triggers the speech recording. 
+- Uses Text to Speech Manager from [MRTK for Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity) (Utilities scripts).
+- It is no longer needed to use your own **Newtonsoft.Json.dll** in the **/Plugins** folder of the HoloBot Unity project since the MRTK already includes it.
 
 ## Connecting your Bot to HoloBot
 - Create and register your bot as per the intructions at https://dev.botframework.com. Bots can be built with C# & ASP.NET WebAPI or Javascript & Node.js. Since HoloBot uses free natural language dictation, it is highly recommended that your bot support NLP via the [Language Understanding Intelligent Service](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) (LUIS) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
@@ -48,10 +43,10 @@ The bot demonstrated in this video is [The Maker Show Bot, also found here on Gi
 
 ## Acknowledgments
 I want to offer special thanks to the following people who have helped me in building this project:
-- [Jarez Bienz](https://github.com/jbienzms), for the Text-to-Speech component that he wrote for the HoloToolkit for Unity, and for his help in integrating my UWP Bot Framework code into Unity.
+- [Jarez Bienz](https://github.com/jbienzms), for the Text-to-Speech component that he wrote for the Mixed Reality Toolkit for Unity, and for his help in integrating my UWP Bot Framework code into Unity.
 - [Kat Haris](https://github.com/KatVHarris), for her awesome Unity skills and helping me with audio sources triggers.
 - Vanessa Arnauld & Sara Nagy, for being incredible holographic "enablers" :)
-- The whole Microsoft Holographic Academy team & mentors - especially Pat - for their awesome training, resources, patience and help.
+- The whole Microsoft Mixed Reality Academy team & mentors - especially Pat - for their awesome training, resources, patience and help.
 
 ## Follow Me
 * Twitter: [@ActiveNick](http://twitter.com/ActiveNick)
