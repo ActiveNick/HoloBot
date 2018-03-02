@@ -30,6 +30,10 @@ bld/
 # Packaging content OK
 ![Pp]ackaging/Content/**
 
+# Always include Unity Assets
+![Aa]ssets/AssetStoreTools/**
+![Aa]ssets/**
+
 # Always get Unity root tools
 ![U]nity/**
 
