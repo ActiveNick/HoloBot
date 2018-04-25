@@ -96,7 +96,7 @@ namespace HoloBot
         // From the Bot Connector portal, enable the Direct Line channel on your bot
         // Generate and copy your Direct Line secret (aka API key)
         // TO DO: Please use your own key. This one connects to The Maker Show Bot
-        private string _APIKEY = "PN3lBLvTXwU.cwA.Kb8.qA6OkFZcgx2hLRSAlteqKnCZqYcQD_orUi_kwyw6i8k";
+        private string _APIKEY = "A8IqElB6KV4.cwA.9qA.qWww9eVBQ5K8BNlV444S6y0mvwgT2g2HI1k8dzDjp8w";
         private string botToken;
         private string activeConversation;
         private string activeWatermark;
@@ -122,7 +122,7 @@ namespace HoloBot
                 // Get a new token as dummy call
                 var keyreq = new KeyRequest() { Mainkey = "" };
                 var stringContent = new StringContent(keyreq.ToString());
-                HttpResponseMessage response = await client.PostAsync("v3/directline/conversations", stringContent);
+                HttpResponseMessage response = await client.PostAsync("v4/directline/conversations", stringContent);
                 if (response.IsSuccessStatusCode)
                 {
                     var re = response.Content.ReadAsStringAsync().Result;
@@ -160,7 +160,7 @@ namespace HoloBot
                 };
 
                 string postBody = JsonConvert.SerializeObject(myMessage);
-                String urlString = "v3/directline/conversations/" + conversationId + "/activities";
+                String urlString = "v4/directline/conversations/" + conversationId + "/activities";
                 HttpContent httpContent = new StringContent(postBody, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PostAsync(urlString, httpContent);
                 if (response.IsSuccessStatusCode)
@@ -232,7 +232,7 @@ namespace HoloBot
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + botToken);
 
                 ConversationActitvities cm = new ConversationActitvities();
-                string messageURL = "v3/directline/conversations/" + conversationId + "/activities";
+                string messageURL = "v4/directline/conversations/" + conversationId + "/activities";
                 if (activeWatermark != null)
                     messageURL += "?watermark=" + activeWatermark;
                 HttpResponseMessage response = await client.GetAsync(messageURL);
