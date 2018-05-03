@@ -17,7 +17,7 @@
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WSAPlayer:21</UnityBuildTarget>
-    <UnityVersion>2017.2.2p4</UnityVersion>
+    <UnityVersion>2017.4.2f2</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
@@ -28,7 +28,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_2_2;UNITY_2017_2;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;UNITY_WSA;ENABLE_DOTNET;ENABLE_PROFILER;UNITY_WSA_10_0;UNITY_WINRT_10_0;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2017_4_2;UNITY_2017_4;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;UNITY_WSA;ENABLE_DOTNET;ENABLE_PROFILER;UNITY_WSA_10_0;UNITY_WINRT_10_0;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -38,7 +38,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_2_2;UNITY_2017_2;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;UNITY_WSA;ENABLE_DOTNET;ENABLE_PROFILER;UNITY_WSA_10_0;UNITY_WINRT_10_0;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2017_4_2;UNITY_2017_4;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;PLATFORM_WINRT;UNITY_WINRT;ENABLE_WINRT_PINVOKE;ENABLE_LAZY_METHOD_CACHING;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;ENABLE_EVENT_QUEUE;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;ENABLE_SUBSTANCE;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;CURL_STATICLIB;ENABLE_VR;ENABLE_AR;UNITY_WSA;ENABLE_DOTNET;ENABLE_PROFILER;UNITY_WSA_10_0;UNITY_WINRT_10_0;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -51,172 +51,190 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.CoreModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.AccessibilityModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AccessibilityModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AccessibilityModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.ParticleSystemModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.PhysicsModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.VehiclesModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.VehiclesModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.ClothModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.AIModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.AnimationModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.TextRenderingModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.UIModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UIModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.TerrainPhysicsModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.IMGUIModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.IMGUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.UNETModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UNETModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.DirectorModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.UnityAnalyticsModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityAnalyticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroSupport/Tools/UnityEngine.CrashReportingModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.CrashReportingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityAnalyticsModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.PerformanceReportingModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.PerformanceReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.UnityConnectModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityConnectModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.WebModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.WebModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.WebModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.ARModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ARModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ARModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.VRModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.VRModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.VRModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.UIElementsModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.StyleSheetsModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.StyleSheetsModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.AssetBundleModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.AudioModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.CrashReportingModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.CrashReportingModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.GameCenterModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.GameCenterModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.GridModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.GridModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.GridModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.ImageConversionModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.InputModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.InputModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.InputModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.JSONSerializeModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.ParticlesLegacyModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ParticlesLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.Physics2DModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.ScreenCaptureModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.SharedInternalsModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.SpriteMaskModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.SpriteMaskModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.SpriteShapeModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.SpriteShapeModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.TerrainModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.TilemapModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TilemapModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSupport/Tools/UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.VideoModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="MetroSupport/Tools/UnityEngine.WindModule">
-      <HintPath>C:\Program Files\Unity 2017.2.2p4\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.WindModule.dll</HintPath>
+      <HintPath>C:\Program Files\Unity 2017.4.2f2\Editor\Data\PlaybackEngines\MetroSupport/Tools/UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Timeline">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIAutomation">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/Program Files/Unity 2017.2.2p4/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 2017.4.2f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.4/UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="GLTFSerialization">
+      <HintPath>Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/GLTFSerialization/GLTFSerialization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +243,46 @@
     <Compile Include="Assets\Holograms\Support\Drone\StarArray.cs" />
     <Compile Include="Assets\HoloToolkit\Boundary\Scripts\BoundaryManager.cs" />
     <Compile Include="Assets\HoloToolkit\Boundary\Scripts\SceneContentAdjuster.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\CalibrationSpace.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\CameraCache.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\ClipPlane.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\CrossPlatform\MetroHandleRef.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\CrossPlatform\Reflection\ReflectionExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\CrossPlatform\Reflection\TypeUtils.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\CrossPlatform\SystemException.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\ActionExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\BoundsExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\CameraExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\Color32Extensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\ComponentExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\EventSystemExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\Extensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\InteractionSourceExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\LayerExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\MathfExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\TransformExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Extensions\VectorExtensions.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\HoverLight.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Int3.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\InterpolatedColor.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\InterpolatedFloat.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\InterpolatedQuaternion.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\InterpolatedValue.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\InterpolatedVector2.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\InterpolatedVector3.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\QuaternionInterpolated.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolatedValues\Vector3Interpolated.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\InterpolationUtilities.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Interpolator.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\MathUtils.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\RaycastResultComparer.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\SingleInstance.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\Singleton.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\StartAwareBehaviour.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\StartAwareSingleton.cs" />
+    <Compile Include="Assets\HoloToolkit\Common\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Cursor\AnimatedCursor.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Cursor\AnimatorParameter.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Cursor\AnimCursorDatum.cs" />
@@ -302,10 +360,15 @@
     <Compile Include="Assets\HoloToolkit\Input\Scripts\InputSources\RawInteractionInputSource.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\InputSources\SpeechInputSource.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\InputSources\SupportedInputInfo.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\InputSources\TouchscreenInputSource.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\InputSources\XboxControllerInputSource.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\AttachToController.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\AxisController.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\ButtonController.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\CameraMotionInfo.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\ControllerFinder.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\FadeScript.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\AffineConstraintEnums.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\CustomInputControl.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\CustomInputSelector.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\DebugInteractionSourcePose.cs" />
@@ -313,8 +376,11 @@
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\HandDraggable.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\ManualGazeControl.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\SpeechInputHandler.cs" />
-    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\TapToPlace.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\TriggerButton.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\TwoHandManipulatable.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\TwoHandMoveLogic.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\TwoHandRotateLogic.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Interactions\TwoHandScaleLogic.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\KeywordAndKeyCode.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Managers\HandGuidance.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Managers\InputManager.cs" />
@@ -322,9 +388,11 @@
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Managers\MixedRealityCameraManager.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\Managers\MixedRealityTeleport.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\MicrophoneHelper.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\MicStream.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\MotionControllerInfo.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\MotionControllerVisualizer.cs" />
     <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\SetGlobalListener.cs" />
+    <Compile Include="Assets\HoloToolkit\Input\Scripts\Utilities\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Extensions\SessionExtensions.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\AnchorDownloadRequest.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\SDK\AudioManager.cs" />
@@ -431,22 +499,11 @@
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\DirectPairing.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\ManualIpConfiguration.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\SharingWorldAnchorManager.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\BulletController.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\GenericNetworkTransmitter.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\NetworkDiscoveryWithAnchors.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\SharedAnchorDebugText.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\SharedCollection.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\UNetAnchorManager.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\Scripts\UNetSharedHologram.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\JoinSelectedSessionButton.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\PositionDebugButton.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\ResetAnchorButton.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\ScrollingSessionListUIController.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\ScrollSessionListButton.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\SessionListButton.cs" />
-    <Compile Include="Assets\HoloToolkit\SharingWithUNET\UI\Scripts\StartSessionButton.cs" />
+    <Compile Include="Assets\HoloToolkit\Sharing\Scripts\VoiceChat\MicrophoneReceiver.cs" />
+    <Compile Include="Assets\HoloToolkit\Sharing\Scripts\VoiceChat\MicrophoneTransmitter.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\DataEventArgs.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\ObjectSurfaceObserver.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\PropertyChangedEventArgsEx.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\FileSurfaceObserver.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\MeshSaver.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\RemoteMapping\RemoteMappingManager.cs" />
@@ -460,7 +517,9 @@
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\RemoveSurfaceVertices.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\SurfaceMeshesToPlanes.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\SurfacePlane.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\TapToPlace.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\AudioEmitter.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\AudioLoFiEffect.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\AudioOccluder.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\IAudioInfluencer.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\UAudioManager\ActiveEvent.cs" />
@@ -485,6 +544,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\AdaptiveQuality\AdaptiveQuality.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\AdaptiveQuality\AdaptiveViewport.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\ApplicationViewManager.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\AtlasReferenceUpdater\AtlasPrefabReference.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Attributes\AnimationCurveDefaultAttribute.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Attributes\DocLinkAttribute.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Attributes\DrawLastAttribute.cs" />
@@ -515,76 +575,26 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Attributes\ValidateUnityObjectAttribute.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Billboard.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\BitManipulator.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CameraCache.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CanvasHelper.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CircularBuffer.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CrossPlatform\MetroHandleRef.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CrossPlatform\Reflection\ReflectionExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CrossPlatform\Reflection\TypeUtils.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\CrossPlatform\SystemException.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DataEventArgs.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DebugPanel.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DebugPanelControllerInfo.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DebugPanelFPSCounter.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DirectionIndicator.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\DisplayDependentObjectActivator.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\ActionExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\CameraExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\Color32Extensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\ComponentExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\EventSystemExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\Extensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\GameObjectExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\InteractionSourceExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\LayerExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\MathfExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\TransformExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Extensions\VectorExtensions.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FadeManager.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FadeScript.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FileSystemHelper.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FixedAngularSize.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FpsDisplay.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\AsyncAction.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Async\AsyncAction.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Cache\AssetCache.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Cache\MaterialCacheData.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Cache\MeshCacheData.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Exceptions.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Extensions\SchemaExtensions.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\GLTFComponent.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\GLTFJsonExtensions.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\GLTFLoader.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\GLTFParser.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Accessor.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\AccessorSparse.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\AccessorSparseIndices.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\AccessorSparseValues.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\AnimationChannel.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\AnimationChannelTarget.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\AnimationSampler.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Asset.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Buffer.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\BufferView.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\CameraOrthographic.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\CameraPerspective.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Extension.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\GLTFAnimation.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\GLTFCamera.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\GLTFChildOfRootProperty.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\GLTFId.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\GLTFProperty.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\GLTFRoot.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Image.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Material.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\MaterialCommonConstant.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\MaterialNormalTextureInfo.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\MaterialOcclusionTextureInfo.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\MaterialPBRMetallicRoughness.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Mesh.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\MeshPrimitive.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Node.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Sampler.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Scene.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Skin.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\Texture.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\Schema\TextureInfo.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTFComponentStreamingAssets.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\GLTFSceneImporter.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Scripts\GLTFUnityHelpers.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GpuTiming\GpuTiming.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\GpuTiming\GpuTimingCamera.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\HashCodes.cs" />
@@ -593,43 +603,45 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InputMappingAxisUtility.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Inspectors\MRTKEditor.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Inspectors\ProfileInspector.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Int3.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\InterpolatedColor.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\InterpolatedFloat.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\InterpolatedQuaternion.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\InterpolatedValue.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\InterpolatedVector2.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\InterpolatedVector3.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\QuaternionInterpolated.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolatedValues\Vector3Interpolated.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\InterpolationUtilities.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Interpolator.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\MathUtils.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\NearPlaneFade.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\PriorityQueue.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\PropertyChangedEventArgsEx.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\RaycastResultComparer.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\RaycastHelper.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\RaycastResultHelper.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\ReadOnlyHashSet.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SceneLauncher.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SceneLauncherButton.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SimpleTagalong.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SingleInstance.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Singleton.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\Solver.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\SolverBodyLock.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\SolverConstantViewSize.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\SolverHandler.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\SolverMomentumizer.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\SolverRadialView.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Solvers\SolverSurfaceMagnetism.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SortingLayerOverride.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SphereBasedTagalong.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\StabilizationPlaneModifier.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\StartAwareBehaviour.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\StartAwareSingleton.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Tagalong.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\TextToSpeech.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Timer.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\TimerScheduler.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\ToggleDebugWindow.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\UnityEventFloat.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Utils.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WindowsApiChecker.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\AppBar\AppBar.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\AppBar\AppBarButton.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\AxisSlider.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBox.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmo.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmoHandle.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmoHandleAxisToAffectEnum.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmoHandleHandMotionTypeEnum.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmoHandleRotationTypeEnum.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmoHandleTransformTypeEnum.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxGizmoShell.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\BoundingBoxRig.cs" />
+    <Compile Include="Assets\HoloToolkit\UX\Scripts\BoundingBoxes\Duplicator.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Buttons\AnimatorControllerAction.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Buttons\AnimButton.cs" />
     <Compile Include="Assets\HoloToolkit\UX\Scripts\Buttons\AnimControllerButton.cs" />
@@ -709,10 +721,34 @@
     <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurable.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurable.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\BlinnPhongConfigurableTransparent.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\FastConfigurable2Sided.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\HoloToolkitCommon.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\FastConfigurable\macro.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\HoloToolkitCommon.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\LambertianConfigurable.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\LambertianConfigurable.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\LambertianConfigurableTransparent.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\StandardFast.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurable.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitConfigurableTransparent.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\UnlitNoDepthTest.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurable.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurable.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\VertexLitConfigurableTransparent.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Obsolete\macro.cginc" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\Standard.shader" />
+    <None Include="Assets\HoloToolkit\Common\Shaders\WindowOcclusion.shader" />
     <None Include="Assets\HoloToolkit\Input\Shaders\Cursor.shader" />
     <None Include="Assets\HoloToolkit\Input\Shaders\CursorShader.shader" />
     <None Include="Assets\HoloToolkit\Input\Shaders\EditorHands.shader" />
     <None Include="Assets\HoloToolkit\License.txt" />
+    <None Include="Assets\HoloToolkit\MRTKVersion.txt" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Occlusion.shader" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\SpatialMappingTap.shader" />
     <None Include="Assets\HoloToolkit\SpatialMapping\Shaders\Wireframe.shader" />
@@ -731,28 +767,12 @@
     <None Include="Assets\HoloToolkit\UX\Shaders\Occlusion.shader" />
     <None Include="Assets\HoloToolkit\UX\Shaders\StereoImage.shader" />
     <None Include="Assets\HoloToolkit\UX\Shaders\unlit_vert_color.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\FastConfigurable.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\FastConfigurable.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\FastConfigurable2Sided.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\HoloToolkitCommon.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Shaders\macro.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\BlinnPhongConfigurable.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\BlinnPhongConfigurable.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\BlinnPhongConfigurableTransparent.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\HoloToolkitCommon.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\LambertianConfigurable.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\LambertianConfigurable.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\LambertianConfigurableTransparent.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\StandardFast.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\UnlitConfigurable.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\UnlitConfigurable.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\UnlitConfigurableTransparent.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\UnlitNoDepthTest.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\VertexLitConfigurable.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\VertexLitConfigurable.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\VertexLitConfigurableTransparent.shader" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\Obsolete\macro.cginc" />
-    <None Include="Assets\HoloToolkit\Utilities\Shaders\WindowOcclusion.shader" />
+    <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.cginc" />
+    <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFConstant.shader" />
+    <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFMobileCommon.cginc" />
+    <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFStandard.shader" />
+    <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFStandardInput.cginc" />
+    <None Include="Assets\HoloToolkit\Utilities\Scripts\GLTF\Shaders\GLTFVertexLitCommon.cginc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
