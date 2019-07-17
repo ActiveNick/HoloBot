@@ -1,7 +1,6 @@
-//
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
-//
+
 using UnityEngine;
 using System.Collections.Generic;
 using System;
@@ -124,7 +123,7 @@ namespace HoloToolkit.Unity.Collections
 
             for (int i = 0; i < NodeList.Count; i++)
             {
-                if (NodeList[i].transform == null || (IgnoreInactiveTransforms && !NodeList[i].transform.gameObject.activeSelf))
+                if (NodeList[i].transform == null || (IgnoreInactiveTransforms && !NodeList[i].transform.gameObject.activeSelf) || NodeList[i].transform.parent==null || !(NodeList[i].transform.parent.gameObject==this.gameObject))
                 {
                     emptyNodes.Add(NodeList[i]);
                 }
@@ -177,7 +176,7 @@ namespace HoloToolkit.Unity.Collections
                     break;
             }
 
-            _columns = Mathf.CeilToInt(NodeList.Count / Rows);
+            _columns = Mathf.CeilToInt((float)NodeList.Count / Rows);
             _width = _columns * CellWidth;
             _height = Rows * CellHeight;
             _halfCell = new Vector2(CellWidth / 2f, CellHeight / 2f);

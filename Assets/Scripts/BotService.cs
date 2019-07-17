@@ -122,7 +122,9 @@ namespace HoloBot
                 // Get a new token as dummy call
                 var keyreq = new KeyRequest() { Mainkey = "" };
                 var stringContent = new StringContent(keyreq.ToString());
-                HttpResponseMessage response = await client.PostAsync("v3/directline/conversations", stringContent);
+                //string path = "v3/directline/conversations";
+                string path = "api/conversations";
+                HttpResponseMessage response = await client.PostAsync(path, stringContent);
                 if (response.IsSuccessStatusCode)
                 {
                     var re = response.Content.ReadAsStringAsync().Result;
