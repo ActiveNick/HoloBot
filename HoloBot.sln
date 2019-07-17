@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloBot", "HoloBot.csproj", "{BD6A67AB-3154-F483-4EF6-7BC8267093A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{341C2442-0E2E-3C4B-9244-A77A5897AD72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoloBot.Editor", "HoloBot.Editor.csproj", "{0D522E03-A34A-48C4-680F-2B679D2D43EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{02F52917-6B48-75FE-2721-84749700D948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BD6A67AB-3154-F483-4EF6-7BC8267093A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD6A67AB-3154-F483-4EF6-7BC8267093A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD6A67AB-3154-F483-4EF6-7BC8267093A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD6A67AB-3154-F483-4EF6-7BC8267093A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D522E03-A34A-48C4-680F-2B679D2D43EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D522E03-A34A-48C4-680F-2B679D2D43EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D522E03-A34A-48C4-680F-2B679D2D43EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D522E03-A34A-48C4-680F-2B679D2D43EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341C2442-0E2E-3C4B-9244-A77A5897AD72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341C2442-0E2E-3C4B-9244-A77A5897AD72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341C2442-0E2E-3C4B-9244-A77A5897AD72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341C2442-0E2E-3C4B-9244-A77A5897AD72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F52917-6B48-75FE-2721-84749700D948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F52917-6B48-75FE-2721-84749700D948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F52917-6B48-75FE-2721-84749700D948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F52917-6B48-75FE-2721-84749700D948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
