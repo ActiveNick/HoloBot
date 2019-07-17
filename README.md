@@ -3,13 +3,13 @@ Take your bots beyond Skype, Slack, Microsoft Teams and Facebook and bring them 
 
 HoloBot is reusable Windows Mixed Reality Unity project for [Microsoft HoloLens](http://hololens.com) and immersive VR headsets that acts as a holographic client for a chatbot. This 3D app lets you interact with a floating robot head using speech recognition, getting answers spoken back by the "bot" using Text-to-Speech. The commands sent to the bot are powered by the [Microsoft Bot Framework](https://dev.botframework.com/) and [LUIS](https://www.microsoft.com/cognitive-services/en-us/language-understanding-intelligent-service-luis) from [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services).
 
-- **Unity version:** 2017.4.16f1
+- **Unity version:** 2018.4.4f1
 - **Mixed Reality Toolkit (MRTK) version:** 2017.2.1.1 patch release
 
 To get started with HoloLens & Windows Mixed Reality development, visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/en-us/windows/mixed-reality). The HoloLens Developer Kit is available for sale in several countries at http://hololens.com.
 
 ## Project Update
-I have started migrating this project to unity 2018.4, which will support the latest version of MRTKv2, HoloLens 1 & 2, and use the new unified Speech SDK from Microsoft Cognitive Services. See the branch titled **Dev 2018.4 MRTKv2** to track the work in progress. *Note that builds in this branch might sometimes cause errors or have missing features, use at your own risk.*
+This branch is a work in progress as I am migrating HoloBot to Unity 2018.4, which will support the latest version of MRTKv2, HoloLens 1 & 2, and use the new unified Speech SDK from Microsoft Cognitive Services. Only use this dev branch to track the work in progress. *Note that builds in this branch might sometimes cause errors or have missing features, use at your own risk.*
 
 *Note for Unity 5.x users:* Now that HoloBot has been upgraded to Unity 2017.4, I have archived the previous version for Unity 5.6.3p2 in a separate dev branch ([download Unity 5.6.3p2 here](https://beta.unity3d.com/download/b3d7a6428558/UnityDownloadAssistant-5.6.3p2.exe)). Note that this legacy version of HoloBot is only provided for archival purposes and this branch will no longer be worked on.
 
