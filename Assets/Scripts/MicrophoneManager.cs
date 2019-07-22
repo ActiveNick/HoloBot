@@ -1,11 +1,10 @@
-﻿using HoloToolkit;
+﻿using Microsoft.MixedReality;
 using System.Collections;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
-using HoloToolkit.Unity;
-using HoloToolkit.Unity.InputModule;
+using Microsoft.MixedReality.Toolkit.Input;
 using HoloBot;
 using System;
 
@@ -13,7 +12,7 @@ using System;
 /// MicrophoneManager lets us capture audio from the user and feed into speech recognition
 /// Make sure to enable the Microphone capability in the Windows 10 UWP Player Settings
 /// </summary>
-public class MicrophoneManager : MonoBehaviour, IFocusable
+public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
 {
     //[Tooltip("A text area for the recognizer to display the recognized strings.")]
     //public Text DictationDisplay;
@@ -24,7 +23,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     // Use this string to cache the text currently displayed in the text box.
     //public Text captions;
     //public Animator animator;
-    public TextToSpeech MyTTS;
+    //public TextToSpeech MyTTS;        // Windows TTS was removed in MRTKv2, will be replaced with Cognitive Services Speech
     public CaptionsManager captionsManager;
 
     // Using an empty string specifies the default microphone. 
@@ -111,7 +110,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
     /// <summary>
     /// Activate speech recognition only when the user looks straight at the bot
     /// </summary>
-    public void OnFocusEnter()
+    public void OnFocusEnter(FocusEventData eventData)
     {
         // Don't activate speech recognition if the recognizer is already running
         if (dictationRecognizer.Status != SpeechSystemStatus.Running)
@@ -132,7 +131,7 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         }
     }
 
-    public void OnFocusExit()
+    public void OnFocusExit(FocusEventData eventData)
     {
         // Do nothing, let the user keep talking even if they look away
     }
@@ -246,13 +245,13 @@ public class MicrophoneManager : MonoBehaviour, IFocusable
         captionsManager.SetCaptionsText(text);
 
         //animator.Play("Happy"); // TO DO: Need to fix, not working yet
-        MyTTS.StartSpeaking(text);
+        //MyTTS.StartSpeaking(text);        // Windows TTS was removed in MRTKv2, will be replaced with Cognitive Services Speech
 
         // Set DictationDisplay text to be textSoFar
         //DictationDisplay.text = textSoFar.ToString();
     }
 #endif
-    
+
     /// <summary>
     /// This event is fired when the recognizer stops, whether from Stop() being called, a timeout occurring, or some other error.
     /// Typically, this will simply return "Complete". In this case, we check to see if the recognizer timed out.
