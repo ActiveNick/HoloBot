@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\BotService.cs" />
     <Compile Include="Assets\Scripts\GazeManager.cs" />
     <Compile Include="Assets\Scripts\SpeechRecognition.cs" />
+    <Compile Include="Assets\Scripts\UnityDispatcher.cs" />
     <None Include="Assets\MixedRealityToolkit.Providers\Version.txt" />
     <None Include="Assets\MixedRealityToolkit.Services\Version.txt" />
     <None Include="Assets\MixedRealityToolkit.Services\License.txt" />
