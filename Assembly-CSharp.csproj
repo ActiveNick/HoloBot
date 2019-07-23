@@ -64,8 +64,7 @@
     <Compile Include="Assets\Holograms\Support\Drone\FriendlyDrone.cs" />
     <Compile Include="Assets\Holograms\Support\Drone\StarArray.cs" />
     <Compile Include="Assets\Scripts\BotService.cs" />
-    <Compile Include="Assets\Scripts\CaptionsManager.cs" />
-    <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
+    <Compile Include="Assets\Scripts\GazeManager.cs" />
     <Compile Include="Assets\Scripts\SpeechRecognition.cs" />
     <None Include="Assets\MixedRealityToolkit.Providers\Version.txt" />
     <None Include="Assets\MixedRealityToolkit.Services\Version.txt" />
@@ -86,6 +85,12 @@
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>D:/Dev/Git/HoloBot/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.WindowsMR.Editor">
+      <HintPath>D:/Dev/Git/HoloBot/Library/ScriptAssemblies/Unity.XR.WindowsMR.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.WindowsMR">
+      <HintPath>D:/Dev/Git/HoloBot/Library/ScriptAssemblies/Unity.XR.WindowsMR.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>

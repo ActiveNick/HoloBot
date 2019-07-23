@@ -16,6 +16,7 @@ using System.Diagnostics;
 #if PLATFORM_ANDROID
 using UnityEngine.Android;
 #endif
+using HoloBot;
 
 /// <summary>
 /// SpeechRecognition class lets the user use Speech-to-Text to convert spoken words
@@ -32,16 +33,6 @@ public class SpeechRecognition : MonoBehaviour
     [Tooltip("Unity UI Text component used to post recognition results on screen.")]
     public Text ErrorText;
 
-    // TRANSLATION NOT ENABLED FOR NOW
-    // Dropdown lists used to select translation languages, if enabled
-    //public Toggle TranslationEnabled;
-    //[Tooltip("Target language #1 for translation (if enabled).")]
-    //public Dropdown Languages1;
-    //[Tooltip("Target language #2 for translation (if enabled).")]
-    //public Dropdown Languages2;
-    //[Tooltip("Target language #3 for translation (if enabled).")]
-    //public Dropdown Languages3;
-
     // Used to show live messages on screen, must be locked to avoid threading deadlocks since
     // the recognition events are raised in a separate thread
     private string recognizedString = "";
@@ -57,11 +48,13 @@ public class SpeechRecognition : MonoBehaviour
 
     // Cognitive Services Speech objects used for Speech Recognition
     private SpeechRecognizer recognizer;
-    //private TranslationRecognizer translator;
     // The current language of origin is locked to English-US in this sample. Change this
     // to another region & language code to use a different origin language.
     // e.g. fr-fr, es-es, etc.
     string fromLanguage = "en-us";
+
+    // Client object to communicate with the Bot Service
+    private BotService tmsBot = new BotService();
 
     private bool micPermissionGranted = false;
 #if PLATFORM_ANDROID
@@ -70,7 +63,8 @@ public class SpeechRecognition : MonoBehaviour
     private Microphone mic;
 #endif
 
-    private void Awake()
+    // Awake was made async so we can await the StartConversation Task
+    private async void Awake()
     {
         // IMPORTANT INFO BEFORE YOU CAN USE THIS SAMPLE:
         // Get your own Cognitive Services Speech subscription key for free at the following
@@ -80,6 +74,9 @@ public class SpeechRecognition : MonoBehaviour
         // then uncomment the two lines below and set the values to your own.
         //SpeechServiceAPIKey = "YourSubscriptionKey";
         //SpeechServiceRegion = "YourServiceRegion";
+
+        // Initialize the Bot Framework client before we can send requests in
+        //await tmsBot.StartConversation();
     }
 
     private void Start()
@@ -112,21 +109,14 @@ public class SpeechRecognition : MonoBehaviour
         errorString = "";
         if (micPermissionGranted)
         {
-            //if (TranslationEnabled.isOn)
-            //{
-            //    StartContinuousTranslation();
-            //}
-            //else
-            //{
             if (continuous)
             {
-                StartContinuousRecognition();
+                // Continuous recognition is currently not needed/supported in this application
             }
             else
             {
                 StartSingleRecognition();
             }
-            //}
         }
         else
         {
@@ -172,26 +162,6 @@ public class SpeechRecognition : MonoBehaviour
             }
         }
         UnityEngine.Debug.LogFormat("CreateSpeechRecognizer exit");
-    }
-
-    /// <summary>
-    /// Initiate continuous speech recognition from the default microphone.
-    /// </summary>
-    private async void StartContinuousRecognition()
-    {
-        UnityEngine.Debug.LogFormat("Starting Continuous Speech Recognition.");
-        CreateSpeechRecognizer();
-
-        if (recognizer != null && !isRecognizing)
-        {
-            UnityEngine.Debug.LogFormat("Starting Speech Recognizer.");
-            isRecognizing = true;
-            recognizedString = "Speech Recognizer is now running.";
-            await recognizer.StartContinuousRecognitionAsync().ConfigureAwait(false);
-
-            UnityEngine.Debug.LogFormat("Speech Recognizer is now running.");
-        }
-        UnityEngine.Debug.LogFormat("Start Continuous Speech Recognition exit");
     }
 
     /// <summary>
@@ -265,7 +235,39 @@ public class SpeechRecognition : MonoBehaviour
         {
             UnityEngine.Debug.LogFormat($"NOMATCH: Speech could not be recognized.");
         }
-        isRecognizing = false;
+        StopRecognition();
+    }
+
+    private async void SendBotRequestMessage(string message)
+    {
+        string result = "I'm sorry, I'm not sure how to answer that";
+
+        if (await tmsBot.SendMessage(message))
+        {
+            ConversationActitvities messages = await tmsBot.GetMessages();
+            if (messages.activities.Length > 0)
+            {
+                result = "";
+            }
+
+            // Note that attachments (like cards) are still not supported
+            for (int i = 1; i < messages.activities.Length; i++)
+            {
+                // We focus on the speak tag if the bot was speech-enabled.
+                // Otherwise we'll just speak the default text instead.
+                if (messages.activities[i].speak.Length > 0)
+                {
+                    result += (messages.activities[i].speak + " ");
+                }
+                else
+                {
+                    result += (messages.activities[i].text + " ");
+                }
+            }
+        }
+
+        //animator.Play("Happy");
+        //MyTTS.StartSpeaking(result);  // text-to-Speech currently disabled
     }
 
     // "Canceled" events are fired if the server encounters some kind of error.
@@ -280,45 +282,9 @@ public class SpeechRecognition : MonoBehaviour
             UnityEngine.Debug.LogFormat($"CANCELED: ErrorDetails={e.ErrorDetails}");
             UnityEngine.Debug.LogFormat($"CANCELED: Did you update the subscription info?");
         }
-        isRecognizing = false;
+        StopRecognition();
     }
     #endregion
-
-    /// <summary>
-    /// Creates a class-level Translation Recognizer for a specific language using Azure credentials
-    /// and hooks-up lifecycle & recognition events. Translation can be enabled with one or more target
-    /// languages translated simultaneously
-    /// </summary>
-    //void CreateTranslationRecognizer()
-    //{
-    //    UnityEngine.Debug.LogFormat("Creating Translation Recognizer.");
-    //    recognizedString = "Initializing speech recognition with translation, please wait...";
-
-    //    if (translator == null)
-    //    {
-    //        SpeechTranslationConfig config = SpeechTranslationConfig.FromSubscription(SpeechServiceAPIKey, SpeechServiceRegion);
-    //        config.SpeechRecognitionLanguage = fromLanguage;
-    //        if (Languages1.captionText.text.Length > 0)
-    //            config.AddTargetLanguage(ExtractLanguageCode(Languages1.captionText.text));
-    //        if (Languages2.captionText.text.Length > 0)
-    //            config.AddTargetLanguage(ExtractLanguageCode(Languages2.captionText.text));
-    //        if (Languages3.captionText.text.Length > 0)
-    //            config.AddTargetLanguage(ExtractLanguageCode(Languages3.captionText.text));
-    //        translator = new TranslationRecognizer(config);
-
-    //        if (translator != null)
-    //        {
-    //            translator.Recognizing += RecognizingTranslationHandler;
-    //            translator.Recognized += RecognizedTranslationHandler;
-    //            translator.SpeechStartDetected += SpeechStartDetectedHandler;
-    //            translator.SpeechEndDetected += SpeechEndDetectedHandler;
-    //            translator.Canceled += CanceledTranslationHandler;
-    //            translator.SessionStarted += SessionStartedHandler;
-    //            translator.SessionStopped += SessionStoppedHandler;
-    //        }
-    //    }
-    //    UnityEngine.Debug.LogFormat("CreateTranslationRecognizer exit");
-    //}
 
     /// <summary>
     /// Extract the language code from the enum used to populate the droplists.
@@ -330,89 +296,6 @@ public class SpeechRecognition : MonoBehaviour
     {
         return languageListLabel.Substring(0, languageListLabel.IndexOf("_"));
     }
-
-    /// <summary>
-    /// Initiate continuous speech recognition from the default microphone, including live translation.
-    /// </summary>
-    //private async void StartContinuousTranslation()
-    //{
-    //    UnityEngine.Debug.LogFormat("Starting Continuous Translation Recognition.");
-    //    CreateTranslationRecognizer();
-
-    //    if (translator != null)
-    //    {
-    //        UnityEngine.Debug.LogFormat("Starting Speech Translator.");
-    //        await translator.StartContinuousRecognitionAsync().ConfigureAwait(false);
-
-    //        recognizedString = "Speech Translator is now running.";
-    //        UnityEngine.Debug.LogFormat("Speech Translator is now running.");
-    //    }
-    //    UnityEngine.Debug.LogFormat("Start Continuous Speech Translation exit");
-    //}
-
-#region Speech Translation event handlers
-//    // "Recognizing" events are fired every time we receive interim results during recognition (i.e. hypotheses)
-//    private void RecognizingTranslationHandler(object sender, TranslationRecognitionEventArgs e)
-//    {
-//        if (e.Result.Reason == ResultReason.TranslatingSpeech)
-//        {
-//            UnityEngine.Debug.LogFormat($"RECOGNIZED HYPOTHESIS: Text={e.Result.Text}");
-//            lock (threadLocker)
-//            {
-//                recognizedString = $"RECOGNIZED HYPOTHESIS ({fromLanguage}): {Environment.NewLine}{e.Result.Text}";
-//                recognizedString += $"{Environment.NewLine}TRANSLATED HYPOTHESESE:";
-//                foreach (var element in e.Result.Translations)
-//                {
-//                    recognizedString += $"{Environment.NewLine}[{element.Key}]: {element.Value}";
-//                }
-//            }
-//        }
-//    }
-
-//    // "Recognized" events are fired when the utterance end was detected by the server
-//    private void RecognizedTranslationHandler(object sender, TranslationRecognitionEventArgs e)
-//    {
-//        if (e.Result.Reason == ResultReason.TranslatedSpeech)
-//        {
-//            UnityEngine.Debug.LogFormat($"RECOGNIZED: Text={e.Result.Text}");
-//            lock (threadLocker)
-//            {
-//                recognizedString = $"RECOGNIZED RESULT ({fromLanguage}): {Environment.NewLine}{e.Result.Text}";
-//                recognizedString += $"{Environment.NewLine}TRANSLATED RESULTS:";
-//                foreach (var element in e.Result.Translations)
-//                {
-//                    recognizedString += $"{Environment.NewLine}[{element.Key}]: {element.Value}";
-//                }
-//            }
-//        }
-//        else if (e.Result.Reason == ResultReason.RecognizedSpeech)
-//        {
-//            UnityEngine.Debug.LogFormat($"RECOGNIZED: Text={e.Result.Text}");
-//            lock (threadLocker)
-//            {
-//                recognizedString = $"NON-TRANSLATED RESULT: {Environment.NewLine}{e.Result.Text}";
-//            }
-//        }
-//        else if (e.Result.Reason == ResultReason.NoMatch)
-//        {
-//            UnityEngine.Debug.LogFormat($"NOMATCH: Speech could not be recognized or translated.");
-//        }
-//    }
-
-//    // "Canceled" events are fired if the server encounters some kind of error.
-//    // This is often caused by invalid subscription credentials.
-//    private void CanceledTranslationHandler(object sender, TranslationRecognitionCanceledEventArgs e)
-//    {
-//        UnityEngine.Debug.LogFormat($"CANCELED: Reason={e.Reason}");
-
-//        errorString = e.ToString();
-//        if (e.Reason == CancellationReason.Error)
-//        {
-//            UnityEngine.Debug.LogFormat($"CANCELED: ErrorDetails={e.ErrorDetails}");
-//            UnityEngine.Debug.LogFormat($"CANCELED: Did you update the subscription info?");
-//        }
-//    }
-#endregion
 
     /// <summary>
     /// Main update loop: Runs every frame
@@ -442,12 +325,10 @@ public class SpeechRecognition : MonoBehaviour
     /// Stops the recognition on the speech recognizer or translator as applicable.
     /// Important: Unhook all events & clean-up resources.
     /// </summary>
-    public async void StopRecognition()
+    public void StopRecognition()
     {
         if (recognizer != null)
         {
-            if (isRecognizing)
-                await recognizer.StopContinuousRecognitionAsync().ConfigureAwait(false);
             recognizer.Recognizing -= RecognizingHandler;
             recognizer.Recognized -= RecognizedHandler;
             recognizer.SpeechStartDetected -= SpeechStartDetectedHandler;
@@ -457,23 +338,8 @@ public class SpeechRecognition : MonoBehaviour
             recognizer.SessionStopped -= SessionStoppedHandler;
             recognizer.Dispose();
             recognizer = null;
-            recognizedString = "Speech Recognizer is now stopped.";
+            isRecognizing = false;
             UnityEngine.Debug.LogFormat("Speech Recognizer is now stopped.");
         }
-        //if (translator != null)
-        //{
-        //    await translator.StopContinuousRecognitionAsync().ConfigureAwait(false);
-        //    translator.Recognizing -= RecognizingTranslationHandler;
-        //    translator.Recognized -= RecognizedTranslationHandler;
-        //    translator.SpeechStartDetected -= SpeechStartDetectedHandler;
-        //    translator.SpeechEndDetected -= SpeechEndDetectedHandler;
-        //    translator.Canceled -= CanceledTranslationHandler;
-        //    translator.SessionStarted -= SessionStartedHandler;
-        //    translator.SessionStopped -= SessionStoppedHandler;
-        //    translator.Dispose();
-        //    translator = null;
-        //    recognizedString = "Speech Translator is now stopped.";
-        //    UnityEngine.Debug.LogFormat("Speech Translator is now stopped.");
-        //}
     }
 }

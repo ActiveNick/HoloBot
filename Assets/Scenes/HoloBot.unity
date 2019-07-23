@@ -9697,7 +9697,7 @@ MeshCollider:
   m_GameObject: {fileID: 228078666}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -9797,8 +9797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeechManager: {fileID: 1903295874}
-  captionsManager: {fileID: 1656220370}
-  selectedSource: {fileID: 228078677}
 --- !u!82 &228078675
 AudioSource:
   m_ObjectHideFlags: 0
@@ -53763,7 +53761,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223558c1df4e9964d823c5f9edb20d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   captions: {fileID: 2043096311}
+  isCaptionsOn: 1
 --- !u!114 &1656220371
 MonoBehaviour:
   m_ObjectHideFlags: 0

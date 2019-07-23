@@ -4,7 +4,6 @@ using UnityEngine;
 public class FriendlyDrone : MonoBehaviour
 {
     public Color EmissiveColor = new Vector4(0f, .87f, 1f, .3f);
-    public long OwningUserId { get; set; }
 
     void Start()
     {
