@@ -2,17 +2,11 @@
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE.md file in the project root for full license information.
 //
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
-using Microsoft.CognitiveServices.Speech.Translation;
-using System.Threading.Tasks;
-using System.Globalization;
 using System;
-using System.Diagnostics;
 #if PLATFORM_ANDROID
 using UnityEngine.Android;
 #endif
@@ -37,7 +31,7 @@ public class SpeechRecognition : MonoBehaviour
     // the recognition events are raised in a separate thread
     private string recognizedString = "";
     private string errorString = "";
-    private System.Object threadLocker = new System.Object();
+    // Status flag to make sure we don't start more than one reco job at a time
     private bool isRecognizing = false;
 
     // Speech recognition key, required
@@ -171,14 +165,13 @@ public class SpeechRecognition : MonoBehaviour
     {
         UnityEngine.Debug.LogFormat("Starting Single Speech Recognition.");
         CreateSpeechRecognizer();
-
         if (recognizer != null && !isRecognizing)
         {
             UnityEngine.Debug.LogFormat("Starting Speech Recognizer.");
             isRecognizing = true;
-            recognizedString = "I'm listening...";
+            recognizedString = "Listening...";
+            UpdateUI();
             await recognizer.RecognizeOnceAsync().ConfigureAwait(false);
-
             UnityEngine.Debug.LogFormat("Speech Recognizer is now running.");
         }
         UnityEngine.Debug.LogFormat("Start Continuous Speech Recognition exit");
@@ -194,6 +187,7 @@ public class SpeechRecognition : MonoBehaviour
     {
         UnityEngine.Debug.LogFormat($"\n    Session event. Event: {e.ToString()}.");
         UnityEngine.Debug.LogFormat($"Session Stop detected. Stop the recognition.");
+        isRecognizing = false;
     }
 
     private void SpeechStartDetectedHandler(object sender, RecognitionEventArgs e)
@@ -205,6 +199,7 @@ public class SpeechRecognition : MonoBehaviour
     {
         UnityEngine.Debug.LogFormat($"SpeechEndDetected received: offset: {e.Offset}.");
         UnityEngine.Debug.LogFormat($"Speech end detected.");
+        isRecognizing = false;
     }
 
     // "Recognizing" events are fired every time we receive interim results during recognition (i.e. hypotheses)
@@ -212,11 +207,9 @@ public class SpeechRecognition : MonoBehaviour
     {
         if (e.Result.Reason == ResultReason.RecognizingSpeech)
         {
-            UnityEngine.Debug.LogFormat($"HYPOTHESIS: Text={e.Result.Text}");
-            lock (threadLocker)
-            {
-                recognizedString = $"HYPOTHESIS: {Environment.NewLine}{e.Result.Text}";
-            }
+            //UnityEngine.Debug.LogFormat($"HYPOTHESIS: Text={e.Result.Text}");
+            recognizedString = $"HYPOTHESIS: {Environment.NewLine}{e.Result.Text}";
+            UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
         }
     }
 
@@ -226,16 +219,15 @@ public class SpeechRecognition : MonoBehaviour
         if (e.Result.Reason == ResultReason.RecognizedSpeech)
         {
             UnityEngine.Debug.LogFormat($"RECOGNIZED: Text={e.Result.Text}");
-            lock (threadLocker)
-            {
-                recognizedString = $"RESULT: {Environment.NewLine}{e.Result.Text}";
-            }
+            recognizedString = $"RESULT: {Environment.NewLine}{e.Result.Text}";
+            UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
         }
         else if (e.Result.Reason == ResultReason.NoMatch)
         {
             UnityEngine.Debug.LogFormat($"NOMATCH: Speech could not be recognized.");
         }
-        StopRecognition();
+        RecognizerCleanup(false);
+        isRecognizing = false;
     }
 
     private async void SendBotRequestMessage(string message)
@@ -277,12 +269,14 @@ public class SpeechRecognition : MonoBehaviour
         UnityEngine.Debug.LogFormat($"CANCELED: Reason={e.Reason}");
 
         errorString = e.ToString();
+        UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
         if (e.Reason == CancellationReason.Error)
         {
             UnityEngine.Debug.LogFormat($"CANCELED: ErrorDetails={e.ErrorDetails}");
             UnityEngine.Debug.LogFormat($"CANCELED: Did you update the subscription info?");
         }
-        StopRecognition();
+        isRecognizing = false;
+        RecognizerCleanup(false);
     }
     #endregion
 
@@ -308,24 +302,24 @@ public class SpeechRecognition : MonoBehaviour
             micPermissionGranted = true;
         }
 #endif
-        // Used to update results on screen during updates
-        lock (threadLocker)
-        {
-            RecognizedText.text = recognizedString;
-            ErrorText.text = errorString;
-        }
+    }
+
+    public void UpdateUI()
+    {
+        RecognizedText.text = recognizedString;
+        ErrorText.text = errorString;
     }
 
     void OnDisable()
     {
-        StopRecognition();
+        RecognizerCleanup(true);
     }
 
     /// <summary>
     /// Stops the recognition on the speech recognizer or translator as applicable.
     /// Important: Unhook all events & clean-up resources.
     /// </summary>
-    public void StopRecognition()
+    public void RecognizerCleanup(bool dispose)
     {
         if (recognizer != null)
         {
@@ -336,7 +330,8 @@ public class SpeechRecognition : MonoBehaviour
             recognizer.Canceled -= CanceledHandler;
             recognizer.SessionStarted -= SessionStartedHandler;
             recognizer.SessionStopped -= SessionStoppedHandler;
-            recognizer.Dispose();
+            if (dispose)
+                recognizer.Dispose();
             recognizer = null;
             isRecognizing = false;
             UnityEngine.Debug.LogFormat("Speech Recognizer is now stopped.");

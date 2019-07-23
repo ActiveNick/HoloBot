@@ -57,7 +57,6 @@ public class GazeManager : MonoBehaviour, IMixedRealityFocusHandler
             // is still in active playback mode
             if (!audioSrcTTS.isPlaying)
             {
-                //captionsManager.ToggleKeywordRecognizer(false);
                 if (audioSrcPing != null)
                 {
                     audioSrcPing.Play();
