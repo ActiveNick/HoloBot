@@ -17,8 +17,10 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
     //[Tooltip("A text area for the recognizer to display the recognized strings.")]
     //public Text DictationDisplay;
 
-    private DictationRecognizer dictationRecognizer;
+    //private DictationRecognizer dictationRecognizer;
     private StringBuilder textSoFar;
+
+    public SpeechRecognition SpeechManager;
 
     // Use this string to cache the text currently displayed in the text box.
     //public Text captions;
@@ -46,36 +48,31 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
     // DO NOT call Task.Wait() from the main thread or things will lock-up once you await 
     // a call inside the task.
     // Use regular Awake in non-UWP or else the Unity editor compiler will complain
-#if WINDOWS_UWP
     async void Awake()
     {
         // Initialize the Bot Framework client before we can send requests in
-        await tmsBot.StartConversation();
-#else
-    void Awake()
-    {
-#endif
+        //await tmsBot.StartConversation();
 
         //animator = GetComponent<Animator>();
 
         // Create a new DictationRecognizer and assign it to dictationRecognizer variable.
-        dictationRecognizer = new DictationRecognizer();
+        //dictationRecognizer = new DictationRecognizer();
 
         // Register for dictationRecognizer.DictationHypothesis and implement DictationHypothesis below
         // This event is fired while the user is talking. As the recognizer listens, it provides text of what it's heard so far.
-        dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
+        //dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
 
         // Register for dictationRecognizer.DictationResult and implement DictationResult below
         // This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
-        dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
+        //dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
 
         // Register for dictationRecognizer.DictationComplete and implement DictationComplete below
         // This event is fired when the recognizer stops, whether from Stop() being called, a timeout occurring, or some other error.
-        dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
+        //dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
 
         // Register for dictationRecognizer.DictationError and implement DictationError below
         // This event is fired when an error occurs.
-        dictationRecognizer.DictationError += DictationRecognizer_DictationError;
+        //dictationRecognizer.DictationError += DictationRecognizer_DictationError;
 
         // Loop through Audio Sources on this gameobject to find the empty one
         // that will be used for TTS playback
@@ -113,7 +110,7 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
     public void OnFocusEnter(FocusEventData eventData)
     {
         // Don't activate speech recognition if the recognizer is already running
-        if (dictationRecognizer.Status != SpeechSystemStatus.Running)
+        if (SpeechManager.IsReady)
         {
             // Don't activate speech recognition if the speech synthesizer's audio source
             // is still in active playback mode
@@ -143,9 +140,10 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
     public void StartRecording()
     {
         // Start dictationRecognizer
-        dictationRecognizer.Start();
+        //dictationRecognizer.Start();
+        SpeechManager.StartRecognition(false);
 
-        Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
+        //Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
     }
 
     /// <summary>
@@ -153,13 +151,13 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
     /// </summary>
     public void StopRecording()
     {
-        // Check if dictationRecognizer.Status is Running and stop it if so
-        if (dictationRecognizer.Status == SpeechSystemStatus.Running)
-        {
-            dictationRecognizer.Stop();
-        }
+        //// Check if dictationRecognizer.Status is Running and stop it if so
+        //if (dictationRecognizer.Status == SpeechSystemStatus.Running)
+        //{
+        //    dictationRecognizer.Stop();
+        //}
 
-        Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
+        //Debug.Log("Dictation Recognizer is now " + ((dictationRecognizer.Status == SpeechSystemStatus.Running) ? "on" : "off"));
     }
 
     /// <summary>
@@ -172,8 +170,6 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
         // Currently unused
     }
 
-    // This event handler's code only works in UWP (i.e. HoloLens)
-#if WINDOWS_UWP
     /// <summary>
     /// This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
     /// </summary>
@@ -223,58 +219,55 @@ public class MicrophoneManager : MonoBehaviour, IMixedRealityFocusHandler
         }
 
         //animator.Play("Happy");
-        MyTTS.StartSpeaking(result);
+        //MyTTS.StartSpeaking(result);
 
         // Display captions for the question
         captionsManager.SetCaptionsText(result);
     }
 
-#else
+    ///// <summary>
+    ///// This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
+    ///// </summary>
+    ///// <param name="text">The text that was heard by the recognizer.</param>
+    ///// <param name="confidence">A representation of how confident (rejected, low, medium, high) the recognizer is of this recognition.</param>
+    //private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
+    //{
+    //    StopRecording();
+    //    // Append textSoFar with latest text
+    //    textSoFar.Append(text);
 
-    /// <summary>
-    /// This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
-    /// </summary>
-    /// <param name="text">The text that was heard by the recognizer.</param>
-    /// <param name="confidence">A representation of how confident (rejected, low, medium, high) the recognizer is of this recognition.</param>
-    private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
-    {
-        StopRecording();
-        // Append textSoFar with latest text
-        textSoFar.Append(text);
+    //    captionsManager.SetCaptionsText(text);
 
-        captionsManager.SetCaptionsText(text);
+    //    //animator.Play("Happy"); // TO DO: Need to fix, not working yet
+    //    //MyTTS.StartSpeaking(text);        // Windows TTS was removed in MRTKv2, will be replaced with Cognitive Services Speech
 
-        //animator.Play("Happy"); // TO DO: Need to fix, not working yet
-        //MyTTS.StartSpeaking(text);        // Windows TTS was removed in MRTKv2, will be replaced with Cognitive Services Speech
+    //    // Set DictationDisplay text to be textSoFar
+    //    //DictationDisplay.text = textSoFar.ToString();
+    //}
 
-        // Set DictationDisplay text to be textSoFar
-        //DictationDisplay.text = textSoFar.ToString();
-    }
-#endif
+    ///// <summary>
+    ///// This event is fired when the recognizer stops, whether from Stop() being called, a timeout occurring, or some other error.
+    ///// Typically, this will simply return "Complete". In this case, we check to see if the recognizer timed out.
+    ///// </summary>
+    ///// <param name="cause">An enumerated reason for the session completing.</param>
+    //private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
+    //{
+    //    // If Timeout occurs, the user has been silent for too long.
+    //    // With dictation, the default timeout after a recognition is 20 seconds.
+    //    // The default timeout with initial silence is 5 seconds.
+    //    if (cause == DictationCompletionCause.TimeoutExceeded)
+    //    {
 
-    /// <summary>
-    /// This event is fired when the recognizer stops, whether from Stop() being called, a timeout occurring, or some other error.
-    /// Typically, this will simply return "Complete". In this case, we check to see if the recognizer timed out.
-    /// </summary>
-    /// <param name="cause">An enumerated reason for the session completing.</param>
-    private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
-    {
-        // If Timeout occurs, the user has been silent for too long.
-        // With dictation, the default timeout after a recognition is 20 seconds.
-        // The default timeout with initial silence is 5 seconds.
-        if (cause == DictationCompletionCause.TimeoutExceeded)
-        {
+    //    }
+    //}
 
-        }
-    }
+    ///// <summary>
+    ///// This event is fired when an error occurs.
+    ///// </summary>
+    ///// <param name="error">The string representation of the error reason.</param>
+    ///// <param name="hresult">The int representation of the hresult.</param>
+    //private void DictationRecognizer_DictationError(string error, int hresult)
+    //{
 
-    /// <summary>
-    /// This event is fired when an error occurs.
-    /// </summary>
-    /// <param name="error">The string representation of the error reason.</param>
-    /// <param name="hresult">The int representation of the hresult.</param>
-    private void DictationRecognizer_DictationError(string error, int hresult)
-    {
-
-    }
+    //}
 }

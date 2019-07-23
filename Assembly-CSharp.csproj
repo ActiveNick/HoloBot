@@ -66,10 +66,12 @@
     <Compile Include="Assets\Scripts\BotService.cs" />
     <Compile Include="Assets\Scripts\CaptionsManager.cs" />
     <Compile Include="Assets\Scripts\MicrophoneManager.cs" />
+    <Compile Include="Assets\Scripts\SpeechRecognition.cs" />
     <None Include="Assets\MixedRealityToolkit.Providers\Version.txt" />
     <None Include="Assets\MixedRealityToolkit.Services\Version.txt" />
     <None Include="Assets\MixedRealityToolkit.Services\License.txt" />
     <None Include="Assets\MixedRealityToolkit.Providers\License.txt" />
+    <None Include="Assets\SpeechSDK\REDIST.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Dev/Git/HoloBot/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -294,6 +296,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Dev/Git/HoloBot/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CognitiveServices.Speech.csharp">
+      <HintPath>D:/Dev/Git/HoloBot/Assets/SpeechSDK/Plugins/x86_64/Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.4f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
