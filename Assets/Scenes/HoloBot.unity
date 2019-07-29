@@ -53791,8 +53791,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecognizedText: {fileID: 2043096311}
   ErrorText: {fileID: 1188230898}
-  SpeechServiceAPIKey: 
-  SpeechServiceRegion: 
+  SpeechServiceAPIKey: 18ac2ead60d54a3aad3011f96f1340a4
+  SpeechServiceRegion: westus2
 --- !u!4 &1903295875
 Transform:
   m_ObjectHideFlags: 0
