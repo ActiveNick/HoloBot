@@ -1,18 +1,17 @@
 ﻿using System;
 using UnityEngine;
-
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-//using Newtonsoft.Json;
+using Newtonsoft.Json;
 
+// The BotService code requires .NET 4.x for the scripting runtime.
+// The Newtonsoft JSON.NET plugin used here requires .NET Standard 2.0
+// API compatibility.
 namespace HoloBot
 {
-    // This block of code won't run in Unity's older version of Mono
-    // This can only be run when targeting .NET 4.x
     public class Conversation
     {
         public string conversationId { get; set; }
@@ -107,30 +106,30 @@ namespace HoloBot
 
         public async Task<string> StartConversation()
         {
-            //using (var client = new HttpClient())
-            //{
-            //    client.BaseAddress = new Uri("https://directline.botframework.com/");
-            //    client.DefaultRequestHeaders.Accept.Clear();
-            //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://directline.botframework.com/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            //    // Authorize
-            //    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + _APIKEY);
+                // Authorize
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + _APIKEY);
 
-            //    // Get a new token as dummy call
-            //    var keyreq = new KeyRequest() { Mainkey = "" };
-            //    var stringContent = new StringContent(keyreq.ToString());
-            //    //string path = "v3/directline/conversations";
-            //    string path = "api/conversations";
-            //    HttpResponseMessage response = await client.PostAsync(path, stringContent);
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var re = response.Content.ReadAsStringAsync().Result;
-            //        var myConversation = JsonConvert.DeserializeObject<Conversation>(re);
-            //        activeConversation = myConversation.conversationId;
-            //        botToken = myConversation.token;
-            //        return myConversation.conversationId;
-            //    }
-            //}
+                // Get a new token as dummy call
+                var keyreq = new KeyRequest() { Mainkey = "" };
+                var stringContent = new StringContent(keyreq.ToString());
+                //string path = "v3/directline/conversations";
+                string path = "api/conversations";
+                HttpResponseMessage response = await client.PostAsync(path, stringContent);
+                if (response.IsSuccessStatusCode)
+                {
+                    var re = response.Content.ReadAsStringAsync().Result;
+                    var myConversation = JsonConvert.DeserializeObject<Conversation>(re);
+                    activeConversation = myConversation.conversationId;
+                    botToken = myConversation.token;
+                    return myConversation.conversationId;
+                }
+            }
             return "Error";
         }
 
@@ -138,42 +137,42 @@ namespace HoloBot
         {
             using (var client = new HttpClient())
             {
-                //string conversationId = activeConversation;
+                string conversationId = activeConversation;
 
-                //client.BaseAddress = new Uri("https://directline.botframework.com/");
-                //client.DefaultRequestHeaders.Accept.Clear();
-                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.BaseAddress = new Uri("https://directline.botframework.com/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                //// Authorize
-                //client.DefaultRequestHeaders.Add("Authorization", "Bearer " + botToken);
+                // Authorize
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + botToken);
 
-                //// Send a message
-                //string messageId = Guid.NewGuid().ToString();
-                //DateTime timeStamp = DateTime.Now;
-                //var attachment = new Attachment();
-                //var myMessage = new Activity()
-                //{
-                //    type = "message",
-                //    from = new UserAccount() { id = "HoloLens User" },
-                //    text = message
-                //};
+                // Send a message
+                string messageId = Guid.NewGuid().ToString();
+                DateTime timeStamp = DateTime.Now;
+                var attachment = new Attachment();
+                var myMessage = new Activity()
+                {
+                    type = "message",
+                    from = new UserAccount() { id = "HoloLens User" },
+                    text = message
+                };
 
-                //string postBody = JsonConvert.SerializeObject(myMessage);
-                //String urlString = "v3/directline/conversations/" + conversationId + "/activities";
-                //HttpContent httpContent = new StringContent(postBody, Encoding.UTF8, "application/json");
-                //HttpResponseMessage response = await client.PostAsync(urlString, httpContent);
-                //if (response.IsSuccessStatusCode)
-                //{
-                //    var re = response.Content.ReadAsStringAsync().Result;
-                //    lastResponse = re;
-                //    var ar = JsonConvert.DeserializeObject<ActivityReference>(re);
-                //    newActivityId = ar.id;
-                //    return true;
-                //}
-                //else
-                //{
-                //    lastResponse = response.Content.ReadAsStringAsync().Result;
-                //}
+                string postBody = JsonConvert.SerializeObject(myMessage);
+                String urlString = "v3/directline/conversations/" + conversationId + "/activities";
+                HttpContent httpContent = new StringContent(postBody, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(urlString, httpContent);
+                if (response.IsSuccessStatusCode)
+                {
+                    var re = response.Content.ReadAsStringAsync().Result;
+                    lastResponse = re;
+                    var ar = JsonConvert.DeserializeObject<ActivityReference>(re);
+                    newActivityId = ar.id;
+                    return true;
+                }
+                else
+                {
+                    lastResponse = response.Content.ReadAsStringAsync().Result;
+                }
                 return false;
             }
         }
@@ -237,11 +236,11 @@ namespace HoloBot
                 HttpResponseMessage response = await client.GetAsync(messageURL);
                 if (response.IsSuccessStatusCode)
                 {
-                    //var re = response.Content.ReadAsStringAsync().Result;
-                    //lastResponse = re.ToString();
-                    //cm = JsonConvert.DeserializeObject<ConversationActitvities>(re);
-                    //activeWatermark = cm.watermark;
-                    //return cm;
+                    var re = response.Content.ReadAsStringAsync().Result;
+                    lastResponse = re.ToString();
+                    cm = JsonConvert.DeserializeObject<ConversationActitvities>(re);
+                    activeWatermark = cm.watermark;
+                    return cm;
                 }
                 return cm;
             }
