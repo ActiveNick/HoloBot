@@ -52,12 +52,15 @@ public class SpeechRecognition : MonoBehaviour
 
     private bool micPermissionGranted = false;
 #if PLATFORM_ANDROID
-    // Required to manifest microphone permission, cf.
+    // Required to manifest microphone permission on Android
     // https://docs.unity3d.com/Manual/android-manifest.html
     private Microphone mic;
 #endif
 
-    // Awake was made async so we can await the StartConversation Task
+    /// <summary>
+    /// First thing to run in the MonoBehavior when the scene is loaded.
+    /// Awake was made async so we can await the StartConversation Task.
+    /// </summary>
     private async void Awake()
     {
         // IMPORTANT INFO BEFORE YOU CAN USE THIS SAMPLE:
@@ -70,7 +73,7 @@ public class SpeechRecognition : MonoBehaviour
         //SpeechServiceRegion = "YourServiceRegion";
 
         // Initialize the Bot Framework client before we can send requests in
-        //await tmsBot.StartConversation();
+        await tmsBot.StartConversation();
     }
 
     private void Start()
@@ -126,6 +129,7 @@ public class SpeechRecognition : MonoBehaviour
     /// </summary>
     void CreateSpeechRecognizer()
     {
+        // Make sure the developer has initialized the sample using their own Cognitive Services Speech API key
         if (SpeechServiceAPIKey.Length == 0 || SpeechServiceAPIKey == "YourSubscriptionKey")
         {
             recognizedString = "You forgot to obtain Cognitive Services Speech credentials and inserting them in this app." + Environment.NewLine +
@@ -177,12 +181,22 @@ public class SpeechRecognition : MonoBehaviour
         UnityEngine.Debug.LogFormat("Start Continuous Speech Recognition exit");
     }
 
+    /// <summary>
+    /// Speech session started in the recognizer.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     #region Speech Recognition event handlers
     private void SessionStartedHandler(object sender, SessionEventArgs e)
     {
         UnityEngine.Debug.LogFormat($"\n    Session started event. Event: {e.ToString()}.");
     }
 
+    /// <summary>
+    /// Speech session stopped in the recognizer
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void SessionStoppedHandler(object sender, SessionEventArgs e)
     {
         UnityEngine.Debug.LogFormat($"\n    Session event. Event: {e.ToString()}.");
@@ -190,11 +204,21 @@ public class SpeechRecognition : MonoBehaviour
         isRecognizing = false;
     }
 
+    /// <summary>
+    /// Event raised when the user starts talking.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void SpeechStartDetectedHandler(object sender, RecognitionEventArgs e)
     {
         UnityEngine.Debug.LogFormat($"SpeechStartDetected received: offset: {e.Offset}.");
     }
 
+    /// <summary>
+    ///  Event raised when the user stops talking.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void SpeechEndDetectedHandler(object sender, RecognitionEventArgs e)
     {
         UnityEngine.Debug.LogFormat($"SpeechEndDetected received: offset: {e.Offset}.");
@@ -202,18 +226,28 @@ public class SpeechRecognition : MonoBehaviour
         isRecognizing = false;
     }
 
-    // "Recognizing" events are fired every time we receive interim results during recognition (i.e. hypotheses)
+    /// <summary>
+    /// "Recognizing" events are fired every time we receive interim results during recognition
+    /// (i.e. hypotheses). This increases perceived performance since the user gets feedback
+    /// as they speak and don't have to wait for long before getting a response.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void RecognizingHandler(object sender, SpeechRecognitionEventArgs e)
     {
         if (e.Result.Reason == ResultReason.RecognizingSpeech)
         {
-            //UnityEngine.Debug.LogFormat($"HYPOTHESIS: Text={e.Result.Text}");
+            //UnityEngine.Debug.LogFormat($"HYPOTHESIS: Text={e.Result.Text}");     // disabled, too spammy
             recognizedString = $"HYPOTHESIS: {Environment.NewLine}{e.Result.Text}";
             UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
         }
     }
 
-    // "Recognized" events are fired when the utterance end was detected by the server
+    /// <summary>
+    /// "Recognized" events are fired when the end of utterance was detected by the server
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void RecognizedHandler(object sender, SpeechRecognitionEventArgs e)
     {
         if (e.Result.Reason == ResultReason.RecognizedSpeech)
@@ -221,6 +255,8 @@ public class SpeechRecognition : MonoBehaviour
             UnityEngine.Debug.LogFormat($"RECOGNIZED: Text={e.Result.Text}");
             recognizedString = $"RESULT: {Environment.NewLine}{e.Result.Text}";
             UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
+            // Send the recognized text as input to the bot framework via the DirectLine API
+            SendBotRequestMessage(recognizedString);
         }
         else if (e.Result.Reason == ResultReason.NoMatch)
         {
@@ -230,10 +266,18 @@ public class SpeechRecognition : MonoBehaviour
         isRecognizing = false;
     }
 
+    /// <summary>
+    /// Sends requests to the Bot Framework via the DirectLine v3 API.
+    /// The specific bot that gets called gets configured via the DirectLine API key
+    /// in the BotService class. This function runs in the background to insure the
+    /// application isn;t blocked whiule we wait for the bot response.
+    /// </summary>
+    /// <param name="message"></param>
     private async void SendBotRequestMessage(string message)
     {
         string result = "I'm sorry, I'm not sure how to answer that";
 
+        // sends the message to the bot and awaits a response.
         if (await tmsBot.SendMessage(message))
         {
             ConversationActitvities messages = await tmsBot.GetMessages();
@@ -259,6 +303,8 @@ public class SpeechRecognition : MonoBehaviour
         }
 
         //animator.Play("Happy");
+        recognizedString = result;
+        UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });        
         //MyTTS.StartSpeaking(result);  // text-to-Speech currently disabled
     }
 

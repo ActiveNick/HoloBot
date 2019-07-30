@@ -299,6 +299,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/Dev/Git/HoloBot/Assets/Plugins/Newtonsoft/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CognitiveServices.Speech.csharp">
       <HintPath>D:/Dev/Git/HoloBot/Assets/SpeechSDK/Plugins/x86_64/Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
     </Reference>
@@ -310,9 +313,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Dev/Git/HoloBot/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/Dev/Git/HoloBot/Assets/Plugins/Newtonsoft/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.5f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
