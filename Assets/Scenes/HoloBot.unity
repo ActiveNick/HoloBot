@@ -9649,6 +9649,7 @@ GameObject:
   - component: {fileID: 228078676}
   - component: {fileID: 228078675}
   - component: {fileID: 228078674}
+  - component: {fileID: 228078673}
   - component: {fileID: 228078669}
   - component: {fileID: 228078668}
   - component: {fileID: 228078681}
@@ -9784,6 +9785,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228078666}
   m_Mesh: {fileID: 4300000, guid: 8e7ff86547235d74d900689195c58f15, type: 3}
+--- !u!114 &228078673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228078666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e458a2efbf042b4d88fbb0bdf6b7823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeechServiceAPIKey: 
+  SpeechServiceRegion: 
+  voiceName: 12
+  VoicePitch: 0
 --- !u!114 &228078674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29696,7 +29713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1196987149
 Transform:
   m_ObjectHideFlags: 0
@@ -53791,6 +53808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecognizedText: {fileID: 2043096311}
   ErrorText: {fileID: 1188230898}
+  speechTTS: {fileID: 228078673}
   SpeechServiceAPIKey: 
   SpeechServiceRegion: 
 --- !u!4 &1903295875

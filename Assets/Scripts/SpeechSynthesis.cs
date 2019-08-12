@@ -51,27 +51,49 @@ public class SpeechSynthesis : MonoBehaviour
         frFRHortenseRUS
     }
 
-    [Tooltip("Cognitive Services Speech API Key")]
+    [HideInInspector]
     public string SpeechServiceAPIKey = string.Empty;
-    [Tooltip("Cognitive Services Speech Service Region.")]
+    [HideInInspector]
     public string SpeechServiceRegion = string.Empty;
 
-    [Tooltip("The audio source where speech will be played.")]
-    public AudioSource audioSource = null;
+    private AudioSource[] audioSources;
+    private AudioSource audioSrcTTS;
 
     public VoiceName voiceName = VoiceName.enUSJessaRUS;
     public int VoicePitch = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// First thing to run in the MonoBehavior when the scene is loaded.
+    /// </summary>
+    void Awake()
     {
-        
+        // Loop through Audio Sources on this gameobject to find the empty one
+        // that will be used for TTS playback
+        audioSources = this.GetComponents<AudioSource>();
+        foreach (AudioSource a in audioSources)
+        {
+            if (a.clip == null)
+            {
+                audioSrcTTS = a; // Used for TTS playback
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    // Start is called before the first frame update
+    //void Start()
+    //{
         
+    //}
+
+    // Update is called once per frame
+    //void Update()
+    //{
+        
+    //}
+
+    public bool IsSpeaking()
+    {
+        return (audioSrcTTS.isPlaying);
     }
 
     // Speech synthesis to pull audio output stream.
@@ -87,45 +109,57 @@ public class SpeechSynthesis : MonoBehaviour
         config.SpeechSynthesisVoiceName = ConvertVoiceNametoString(voiceName);
 
         // Creates an audio out stream.
-        var stream = AudioOutputStream.CreatePullStream();
+        //var stream = AudioOutputStream.CreatePullStream();
         // Creates a speech synthesizer using audio stream output.
-        var streamConfig = AudioConfig.FromStreamOutput(stream);
-        synthesizer = new SpeechSynthesizer(config, streamConfig);
-        Task<SpeechSynthesisResult> Speaking = synthesizer.SpeakTextAsync(message);
+        //var streamConfig = AudioConfig.FromStreamOutput(stream);
+        synthesizer = new SpeechSynthesizer(config, null); // streamConfig);
+        //Task<SpeechSynthesisResult> Speaking = synthesizer.SpeakTextAsync(message);
+        var result = synthesizer.SpeakTextAsync(message).Result;
 
         // We can't await the task without blocking the main Unity thread, so we'll call a coroutine to
         // monitor completion and play audio when it's ready.
-        StartCoroutine(WaitAndPlayRoutineSDK(Speaking));
+        //StartCoroutine(WaitAndPlayRoutineSDK(Speaking));
+        WaitAndPlayRoutineSDK(result);
     }
 
-    private IEnumerator WaitAndPlayRoutineSDK(Task<SpeechSynthesisResult> speakTask)
+    //private IEnumerator WaitAndPlayRoutineSDK(Task<SpeechSynthesisResult> speakTask)
+    private void WaitAndPlayRoutineSDK(SpeechSynthesisResult result)
     {
         // Yield control back to the main thread as long as the task is still running
-        while (!speakTask.IsCompleted)
-        {
-            yield return null;
-        }
+        //while (!speakTask.IsCompleted)
+        //{
+        //    yield return null;
+        //}
 
-        var result = speakTask.Result;
+        //var result = speakTask.Result;
         if (result.Reason == ResultReason.SynthesizingAudioCompleted)
         {
             var audiodata = result.AudioData;
             Debug.Log($"Speech synthesized for text and the audio was written to output stream.");
 
-            int sampleCount = 0;
+            int sampleCount = result.AudioData.Length / 2;
+            // The default output audio format is 16K 16bit mono
             int frequency = 16000;
+            //var audioData = new float[sampleCount];
+            //for (var i = 0; i < sampleCount; ++i)
+            //{
+            //    audioData[i] = (short)(result.AudioData[i * 2 + 1] << 8 | result.AudioData[i * 2]) / 32768.0F;
+            //}
+            //var audioClip = AudioClip.Create("SynthesizedAudio", sampleCount, 1, frequency, false);
+            //audioClip.SetData(audioData, 0);
+
             var unityData = FixedRAWAudioToUnityAudio(audiodata, 1, 16, out sampleCount);
 
             // Convert data to a Unity audio clip
             Debug.Log($"Converting audio data of size {unityData.Length} to Unity audio clip with {sampleCount} samples at frequency {frequency}.");
-            var clip = ToClip("Speech", unityData, sampleCount, frequency);
+            var audioClip = ToClip("Speech", unityData, sampleCount, frequency);
 
             // Set the source on the audio clip
-            audioSource.clip = clip;
+            audioSrcTTS.clip = audioClip;
 
             Debug.Log($"Trigger playback of audio clip on AudioSource.");
             // Play audio
-            audioSource.Play();
+            audioSrcTTS.Play();
         }
         else if (result.Reason == ResultReason.Canceled)
         {
@@ -192,7 +226,8 @@ public class SpeechSynthesis : MonoBehaviour
         }
         catch (Exception ex)
         {
-            Debug.Log($"Error occurred converting audio data to float array of size {wavAudio.Length} at position {pos}.");
+            Debug.Log($"Error occurred converting audio data to float array of size {wavAudio.Length} at position {pos}." +
+                        Environment.NewLine + ex.Message);
         }
 
         return unityData;

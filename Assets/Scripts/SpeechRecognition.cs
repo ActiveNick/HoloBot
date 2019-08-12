@@ -27,6 +27,9 @@ public class SpeechRecognition : MonoBehaviour
     [Tooltip("Unity UI Text component used to post recognition results on screen.")]
     public Text ErrorText;
 
+    [Tooltip("SpeechSynthesis object used for text-to-speech playback.")]
+    public SpeechSynthesis speechTTS;
+
     // Used to show live messages on screen, must be locked to avoid threading deadlocks since
     // the recognition events are raised in a separate thread
     private string recognizedString = "";
@@ -78,6 +81,16 @@ public class SpeechRecognition : MonoBehaviour
 
     private void Start()
     {
+        if (speechTTS == null)
+        {
+            UnityEngine.Debug.LogFormat("The SpeechManager is NotFiniteNumberException properly configured with a TTS object.");
+            return;
+        } else
+        {
+            speechTTS.SpeechServiceAPIKey = SpeechServiceAPIKey;
+            speechTTS.SpeechServiceRegion = SpeechServiceRegion;
+        }
+
 #if PLATFORM_ANDROID
         // Request to use the microphone, cf.
         // https://docs.unity3d.com/Manual/android-RequestingPermissions.html
@@ -238,7 +251,7 @@ public class SpeechRecognition : MonoBehaviour
         if (e.Result.Reason == ResultReason.RecognizingSpeech)
         {
             //UnityEngine.Debug.LogFormat($"HYPOTHESIS: Text={e.Result.Text}");     // disabled, too spammy
-            recognizedString = $"HYPOTHESIS: {Environment.NewLine}{e.Result.Text}";
+            recognizedString = $"I'm hearing: {Environment.NewLine}{e.Result.Text}";
             UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
         }
     }
@@ -253,10 +266,10 @@ public class SpeechRecognition : MonoBehaviour
         if (e.Result.Reason == ResultReason.RecognizedSpeech)
         {
             UnityEngine.Debug.LogFormat($"RECOGNIZED: Text={e.Result.Text}");
-            recognizedString = $"RESULT: {Environment.NewLine}{e.Result.Text}";
+            recognizedString = $"You said: {Environment.NewLine}{e.Result.Text}";
             UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
             // Send the recognized text as input to the bot framework via the DirectLine API
-            SendBotRequestMessage(recognizedString);
+            SendBotRequestMessage(e.Result.Text);
         }
         else if (e.Result.Reason == ResultReason.NoMatch)
         {
@@ -304,8 +317,9 @@ public class SpeechRecognition : MonoBehaviour
 
         //animator.Play("Happy");
         recognizedString = result;
-        UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });        
-        //MyTTS.StartSpeaking(result);  // text-to-Speech currently disabled
+        // Use Text-to Speech to respond to the user
+        UnityDispatcher.InvokeOnAppThread(() => { UpdateUI(); });
+        speechTTS.SpeakWithSDKPlugin(result);
     }
 
     // "Canceled" events are fired if the server encounters some kind of error.

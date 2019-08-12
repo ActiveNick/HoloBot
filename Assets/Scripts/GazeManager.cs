@@ -14,7 +14,6 @@ public class GazeManager : MonoBehaviour, IMixedRealityFocusHandler
     // audioSrcTTS: Used for TTS playback (TTS currently disabled)
     // audioSrcPing Used to play the audible Ping sound when speech recognition is triggered
     private AudioSource[] audioSources;
-    private AudioSource audioSrcTTS;
     private AudioSource audioSrcPing;
 
     void Awake()
@@ -27,11 +26,6 @@ public class GazeManager : MonoBehaviour, IMixedRealityFocusHandler
         audioSources = this.GetComponents<AudioSource>();
         foreach (AudioSource a in audioSources)
         {
-            if (a.clip == null)
-            {
-                audioSrcTTS = a; // Used for TTS playback
-            }
-            
             if ((a.clip != null) && (a.clip.name == "Ping"))
             {
                 audioSrcPing = a; // Used to play a ping sound when speech recording starts
@@ -55,7 +49,7 @@ public class GazeManager : MonoBehaviour, IMixedRealityFocusHandler
         {
             // Don't activate speech recognition if the speech synthesizer's audio source
             // is still in active playback mode
-            if (!audioSrcTTS.isPlaying)
+            if (!SpeechManager.speechTTS.IsSpeaking())
             {
                 if (audioSrcPing != null)
                 {
