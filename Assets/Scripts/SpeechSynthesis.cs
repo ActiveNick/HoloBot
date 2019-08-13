@@ -6,6 +6,12 @@ using UnityEngine;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 
+/// <summary>
+/// Helper code used to call speech synthesizer in the Unified Speech plugin (SDK),
+/// also known as Text-to-Speech. Supports multiple languages, voices and pitch.
+/// Requires an audiosource attached to the same gameobject for audio playback.
+/// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class SpeechSynthesis : MonoBehaviour
 {
     /// <summary>
@@ -51,14 +57,19 @@ public class SpeechSynthesis : MonoBehaviour
         frFRHortenseRUS
     }
 
+    // No need to populate these speech service credentials in the inspector since
+    // the speech recognizer class will pass its own to these properties. This insures
+    // there are no duplicate credentials in the app.
     [HideInInspector]
     public string SpeechServiceAPIKey = string.Empty;
     [HideInInspector]
     public string SpeechServiceRegion = string.Empty;
 
+    // Used to find the audiosource that will be used for TTS playback
     private AudioSource[] audioSources;
     private AudioSource audioSrcTTS;
 
+    // Default voice is EN-US Jessa, can be changed in the inspector via dropdown
     public VoiceName voiceName = VoiceName.enUSJessaRUS;
     public int VoicePitch = 0;
 
@@ -91,12 +102,21 @@ public class SpeechSynthesis : MonoBehaviour
         
     //}
 
+    /// <summary>
+    /// Returns whether or not the TTS audio source is currently playing. We don't listen for
+    /// another bot query until done to avoid interruptions.
+    /// </summary>
+    /// <returns></returns>
     public bool IsSpeaking()
     {
         return (audioSrcTTS.isPlaying);
     }
 
-    // Speech synthesis to pull audio output stream.
+    /// <summary>
+    /// Calls the Speech synthesis service in the Unified Speech plugin to
+    /// convert a text message to audible speech audio.
+    /// </summary>
+    /// <param name="message"></param>
     public void SpeakWithSDKPlugin(string message)
     {
         //Synthesize cortana = new Synthesize();
@@ -113,25 +133,31 @@ public class SpeechSynthesis : MonoBehaviour
         // Creates a speech synthesizer using audio stream output.
         //var streamConfig = AudioConfig.FromStreamOutput(stream);
         synthesizer = new SpeechSynthesizer(config, null); // streamConfig);
-        //Task<SpeechSynthesisResult> Speaking = synthesizer.SpeakTextAsync(message);
-        var result = synthesizer.SpeakTextAsync(message).Result;
+        Task<SpeechSynthesisResult> Speaking = synthesizer.SpeakTextAsync(message);
+        //var result = synthesizer.SpeakTextAsync(message).Result;
 
-        // We can't await the task without blocking the main Unity thread, so we'll call a coroutine to
-        // monitor completion and play audio when it's ready.
-        //StartCoroutine(WaitAndPlayRoutineSDK(Speaking));
-        WaitAndPlayRoutineSDK(result);
+        // We can't await the task without blocking the main Unity thread, so we'll call a coroutine from
+        // the main thread monitor completion and play audio when it's ready.
+        UnityDispatcher.InvokeOnAppThread(() => {  
+            StartCoroutine(WaitAndPlayRoutineSDK(Speaking));
+        });
     }
 
-    //private IEnumerator WaitAndPlayRoutineSDK(Task<SpeechSynthesisResult> speakTask)
-    private void WaitAndPlayRoutineSDK(SpeechSynthesisResult result)
+    /// <summary>
+    /// Coroutine used for conversion of speech data to Unity audio, and then playback
+    /// via a preassigned audiosource.
+    /// </summary>
+    /// <param name="speakTask"></param>
+    /// <returns></returns>
+    private IEnumerator WaitAndPlayRoutineSDK(Task<SpeechSynthesisResult> speakTask)
     {
         // Yield control back to the main thread as long as the task is still running
-        //while (!speakTask.IsCompleted)
-        //{
-        //    yield return null;
-        //}
+        while (!speakTask.IsCompleted)
+        {
+            yield return null;
+        }
 
-        //var result = speakTask.Result;
+        var result = speakTask.Result;
         if (result.Reason == ResultReason.SynthesizingAudioCompleted)
         {
             var audiodata = result.AudioData;

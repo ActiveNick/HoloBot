@@ -87,6 +87,8 @@ public class SpeechRecognition : MonoBehaviour
             return;
         } else
         {
+            // Initialize the TTS service with the same Speech Service keys & region to avoid
+            // duplicate credentials in the app.
             speechTTS.SpeechServiceAPIKey = SpeechServiceAPIKey;
             speechTTS.SpeechServiceRegion = SpeechServiceRegion;
         }
@@ -104,6 +106,11 @@ public class SpeechRecognition : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// Check to see if the Speech recognition class is ready. This only checks for microphone
+    /// permissions for now. If Speech service credentials are not set properly, the service
+    /// will throw an error when the recognizer is created.
+    /// </summary>
     public bool IsReady {
         get
         {
@@ -322,8 +329,12 @@ public class SpeechRecognition : MonoBehaviour
         speechTTS.SpeakWithSDKPlugin(result);
     }
 
-    // "Canceled" events are fired if the server encounters some kind of error.
-    // This is often caused by invalid subscription credentials.
+    /// <summary>
+    /// "Canceled" events are fired if the server encounters some kind of error.
+    /// This is often caused by invalid subscription credentials.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void CanceledHandler(object sender, SpeechRecognitionCanceledEventArgs e)
     {
         UnityEngine.Debug.LogFormat($"CANCELED: Reason={e.Reason}");
@@ -352,7 +363,8 @@ public class SpeechRecognition : MonoBehaviour
     }
 
     /// <summary>
-    /// Main update loop: Runs every frame
+    /// Main update loop: Runs every frame.
+    /// Check for mic permissions on some platforms (e.g. Android) if not already done.
     /// </summary>
     void Update()
     {
@@ -364,12 +376,19 @@ public class SpeechRecognition : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// Updates the UI with user results and error messages.
+    /// Should always be called on the main UI thread since Unity isn't thread safe.
+    /// </summary>
     public void UpdateUI()
     {
         RecognizedText.text = recognizedString;
         ErrorText.text = errorString;
     }
 
+    /// <summary>
+    /// When MonoBehavior gets disabled/
+    /// </summary>
     void OnDisable()
     {
         RecognizerCleanup(true);
@@ -378,6 +397,8 @@ public class SpeechRecognition : MonoBehaviour
     /// <summary>
     /// Stops the recognition on the speech recognizer or translator as applicable.
     /// Important: Unhook all events & clean-up resources.
+    /// Only dispose of the object when the MonoBehavior gets disabled/app exits.
+    /// Set dispose to false if more speech recognition sessions will be initiated.
     /// </summary>
     public void RecognizerCleanup(bool dispose)
     {
@@ -390,6 +411,7 @@ public class SpeechRecognition : MonoBehaviour
             recognizer.Canceled -= CanceledHandler;
             recognizer.SessionStarted -= SessionStartedHandler;
             recognizer.SessionStopped -= SessionStoppedHandler;
+            // Conditional dispose, otherwise we cannot start another session
             if (dispose)
                 recognizer.Dispose();
             recognizer = null;
