@@ -5,7 +5,7 @@ using Microsoft.MixedReality.Toolkit.Input;
 /// GazeManager is used to manage speech recognition triggers based on
 /// Head Gaze (HL1, HL2, VR) or Eye Gaze (HL2)
 /// </summary>
-public class GazeManager : MonoBehaviour, IMixedRealityFocusHandler
+public class BotTriggerManager : MonoBehaviour, IMixedRealityFocusHandler
 {
     // Speech Manager object used to trigger speech recognition and handle requests
     public SpeechRecognition SpeechManager;
