@@ -311,7 +311,7 @@ public class SpeechRecognition : MonoBehaviour
             {
                 // We focus on the speak tag if the bot was speech-enabled.
                 // Otherwise we'll just speak the default text instead.
-                if (messages.activities[i].speak.Length > 0)
+                if (messages.activities[i].speak?.Length > 0)
                 {
                     result += (messages.activities[i].speak + " ");
                 }
