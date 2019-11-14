@@ -29652,8 +29652,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7c4299d34cef9c7419890a479ee24b2b, type: 3}
     m_FontSize: 32
@@ -44067,6 +44065,7 @@ GameObject:
   - component: {fileID: 1519258127}
   - component: {fileID: 1519258126}
   - component: {fileID: 1519258125}
+  - component: {fileID: 1519258129}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -44187,6 +44186,14 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!81 &1519258129
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519258123}
+  m_Enabled: 1
 --- !u!1 &1536818375
 GameObject:
   m_ObjectHideFlags: 0
@@ -53808,8 +53815,8 @@ MonoBehaviour:
   RecognizedText: {fileID: 2043096311}
   ErrorText: {fileID: 1188230898}
   speechTTS: {fileID: 728484683}
-  SpeechServiceAPIKey: 
-  SpeechServiceRegion: 
+  SpeechServiceAPIKey: 18ac2ead60d54a3aad3011f96f1340a4
+  SpeechServiceRegion: westus2
 --- !u!4 &1903295875
 Transform:
   m_ObjectHideFlags: 0
@@ -58701,8 +58708,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7c4299d34cef9c7419890a479ee24b2b, type: 3}
     m_FontSize: 32
