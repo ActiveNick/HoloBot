@@ -103,6 +103,9 @@ public class SpeechRecognition : MonoBehaviour
         }
 #else
         micPermissionGranted = true;
+        recognizedString = "Welcome!";
+        errorString = "";
+        UpdateUI();
 #endif
     }
 

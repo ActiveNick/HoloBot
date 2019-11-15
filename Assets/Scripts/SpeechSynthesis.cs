@@ -70,7 +70,7 @@ public class SpeechSynthesis : MonoBehaviour
     private AudioSource audioSrcTTS;
 
     // Default voice is EN-US Jessa, can be changed in the inspector via dropdown
-    public VoiceName voiceName = VoiceName.enUSJessaRUS;
+    public VoiceName voiceName = VoiceName.enUSJessaNeural;
     public int VoicePitch = 0;
 
     /// <summary>
