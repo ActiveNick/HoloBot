@@ -4,7 +4,6 @@ using UnityEngine;
 public class FriendlyDrone : MonoBehaviour
 {
     public Color EmissiveColor = new Vector4(0f, .87f, 1f, .3f);
-    public long OwningUserId { get; set; }
 
     void Start()
     {
@@ -22,8 +21,11 @@ public class FriendlyDrone : MonoBehaviour
             ParticleSystem childParticleSystem = child.GetComponent<ParticleSystem>();
             if (childParticleSystem != null)
             {
-                childParticleSystem.startColor = EmissiveColor;
-                childParticleSystem.startSize = transform.parent.localScale.magnitude * childParticleSystem.startSize;
+                //childParticleSystem.startColor = EmissiveColor;
+                ParticleSystem.MainModule psmain = childParticleSystem.main;
+                psmain.startColor = EmissiveColor;
+                //childParticleSystem.startSize = transform.parent.localScale.magnitude * childParticleSystem.startSize;
+                psmain.startSizeMultiplier = transform.parent.localScale.magnitude * psmain.startSizeMultiplier;
             }
         }
 
@@ -36,8 +38,11 @@ public class FriendlyDrone : MonoBehaviour
             ParticleSystem childParticleSystem = child.GetComponent<ParticleSystem>();
             if (childParticleSystem != null)
             {
-                childParticleSystem.startColor = EmissiveColor;
-                childParticleSystem.startSize = transform.parent.localScale.magnitude * childParticleSystem.startSize;
+                //childParticleSystem.startColor = EmissiveColor;
+                ParticleSystem.MainModule psmain = childParticleSystem.main;
+                psmain.startColor = EmissiveColor;
+                //childParticleSystem.startSize = transform.parent.localScale.magnitude * childParticleSystem.startSize;
+                psmain.startSizeMultiplier = transform.parent.localScale.magnitude * psmain.startSizeMultiplier;
             }
         }
     }

@@ -1,21 +1,17 @@
 ﻿using System;
 using UnityEngine;
-
-#if WINDOWS_UWP
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-#endif
 
+// The BotService code requires .NET 4.x for the scripting runtime.
+// The Newtonsoft JSON.NET plugin used here requires .NET Standard 2.0
+// API compatibility.
 namespace HoloBot
 {
-    // This block of code won't run in Unity's older version of Mono
-    // This can only be run in a UWP device like the HoloLens
-#if WINDOWS_UWP
     public class Conversation
     {
         public string conversationId { get; set; }
@@ -250,18 +246,6 @@ namespace HoloBot
             }
         }
     }
-#endif
 
-#if !WINDOWS_UWP
-
-    /// <summary>
-    /// This is an empty shim for the BotService within Unity Mono, otherwise we'd get a
-    /// compilation error in Unity when trying to instantiate this object.
-    /// </summary>
-    public class BotService
-    {
-        // This class left intentionally blank, read comment above :)
-    }
-#endif
 }
 
