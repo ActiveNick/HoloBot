@@ -9,7 +9,9 @@ HoloBot is reusable Windows Mixed Reality Unity project for [Microsoft HoloLens]
 To get started with HoloLens & Windows Mixed Reality development, visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/en-us/windows/mixed-reality). The HoloLens Developer Kit is available for sale in several countries at http://hololens.com.
 
 ## Project Update
-This branch is a work in progress as I am migrating HoloBot to Unity 2018.4, which will support the latest version of MRTKv2, HoloLens 1 & 2, and use the new unified Speech SDK from Microsoft Cognitive Services. Only use this dev branch to track the work in progress. *Note that builds in this branch might sometimes cause errors or have missing features, use at your own risk.*
+2021: I am not actively working on this given a lack of free cycles, but I do plan on revisiting this soon enough to upgrade to the latest version of Unity, test with the latest Speech SDK, and test on the latest build of HoloLens 2. New features are in planning too. If there are pressing issues, you can post them here and I will do my best to respond, but I cannot offer any guarantees at this time.
+
+This current version is technically still a work in progress as I was migrating HoloBot to Unity 2018.4, the latest version of MRTKv2 (at the time), HoloLens 1 & 2, and use the new unified Speech SDK from Microsoft Cognitive Services. *Note that builds in this branch might sometimes cause errors or have missing features given how MRTK and the speech SDK are evolving fast.*
 
 *Note for users of older versions of Unity:* Now that HoloBot has been upgraded to Unity 2018.4, I have archived the previous versions in a separate dev branches. Note that these legacy versions of HoloBot are only provided for archival purposes and these branches will no longer be worked on or supported:
 - Unity 5.6.3p2
